@@ -1,26 +1,23 @@
-//import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import logo_img from "../assets/brand_logo.svg";
 
 const Navbar = () => {
-  // const [isOpen, setIsOpen] = useState(false);
-
+  const { loginWithRedirect } = useAuth0();
+  
   return (
     <div className="flex justify-between items-center px-8 py-4 max-w-[1600px] mx-auto">
       <a href="/">
         <img src={logo_img} alt="Awesome.Social Logo" className="h-10"/>
       </a>
       <ul>
-        <li className="float-left mr-4 font-medium">
-          <a href="/about" className="px-6 py-4 hover:brightness-110">About</a>
+        <li className="inline-block mr-4">
+          <a href="/about" className="px-2 py-1 text-center">About</a>
         </li>
-        <li className="float-left mr-4 font-medium">
-          <a href="/service" className="px-6 py-4 hover:brightness-110">Service</a>
+        <li className="inline-block mr-4">
+          <a href="/service" className="px-2 py-1 text-center">Service</a>
         </li>
-        <li className="float-left mr-4 font-medium">
-          <a href="/log-in" className="px-6 py-4 hover:brightness-110">Log In</a>
-        </li>
-        <li className="float-left font-medium">
-          <a href="/sign-up" className="px-6 py-4 bg-deep-sapphire text-white rounded-md hover:brightness-110">Sign Up</a>
+        <li className="inline-block">
+          <button onClick={() => loginWithRedirect()} className="bg-deep-sapphire px-8 py-4 text-center text-white rounded-md">Log In</button>
         </li>
       </ul>
     </div>
