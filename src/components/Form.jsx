@@ -268,16 +268,16 @@ const Form = () => {
             <label>Annual Revenue:
                 <select value={annualRevenue} onChange={handleAnnualRevenueChange}>
                     <option value=''>Select</option>
-                    <option value='$0-$100k'>0-100k</option>
-                    <option value='$100k-$500k'>100k-500k</option>
-                    <option value='$500k-$1M'>500k-1m</option>
-                    <option value='$1M-$5M'>1m-5m</option>
-                    <option value='$5M-$10M'>5m-10m</option>
-                    <option value='$10M-$50M'>10m-50m</option>
-                    <option value='$50M-$100M'>50m-100m</option>
-                    <option value='$100M-$500M'>100m-500m</option>
-                    <option value='$500M-$1B'>500m-1b</option>
-                    <option value='$1B+'>10b+</option>
+                    <option value='$0-$100k'>$0-$100K</option>
+                    <option value='$100k-$500k'>$100K-$500K</option>
+                    <option value='$500k-$1M'>$500K-$1M</option>
+                    <option value='$1M-$5M'>$1M-$5M</option>
+                    <option value='$5M-$10M'>$5M-$10M</option>
+                    <option value='$10M-$50M'>$10M-$50M</option>
+                    <option value='$50M-$100M'>$50M-$100M</option>
+                    <option value='$100M-$500M'>$100M-$500M</option>
+                    <option value='$500M-$1B'>$500M-$1B</option>
+                    <option value='$1B+'>$1b+</option>
                 </select>
             </label>
             <br />
