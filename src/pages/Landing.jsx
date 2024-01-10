@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Form from '../components/Form';
 import { GraphUpArrow, Megaphone, ChatSquareText } from 'react-bootstrap-icons';
 
 const Landing = () => {
@@ -51,6 +52,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="px-8">
+            <Form />
           </div>
         </div>
       </main>
