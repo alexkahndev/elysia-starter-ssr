@@ -64,39 +64,48 @@ const Form = () => {
     };
 
     return (
+        <div class='rounded-xl p-4 w-11/12 mx-auto px-4 text-black border border-black shadow-xl'>
+
 
         <form onSubmit={handleSubmit}>
-            <div class='flex space-x-4 py-2'>
-        <div class='flex-col'>
-            <label class='px-5 pr-60'>
-                First Name:
+            <div class='flex justify-between space-x-4 py-2'>
+        <div class='flex-col pl-10 py-4'>
+            <label class='text-xl'>
+                First Name
+                <textarea type='text' class='p-1 w-full h-11 bg-white rounded-lg shadow-m text-black' onChange={handleFirstNameChange}/>
             </label>
-            <input type='text' class='p-1 w-25 bg-white rounded-lg shadow-m' onChange={handleFirstNameChange}/>
         </div>
-        <div class='flex-col'>
-            <label>
-                Last Name:
+        <div class='flex-col pr-10 py-4'>
+            <label class='text-xl'>
+                Last Name
+                <input type='text' class='p-1 w-full h-11 bg-white rounded-lg shadow-m text-black' onChange={handleLastNameChange}/>
+
             </label>
-            <input type='text' class='p-1 w-25 bg-white rounded-lg shadow-m' onChange={handleLastNameChange}/>
         </div>
     </div>
             <br />
-            <div class='flex space-x-2 py-2'>
-            <label>
-            
-                Company Name:
-                <input type='text' class='p-1 w-25 bg-white rounded-lg shadow-m' onChange={handleCompanyNameChange}/>
-            </label>    
-            <br />
-            <label>
-                Phone:
-                <input type='text' placeholder='(xxx) xxx-xxxx' onChange={handlePhoneChange}/>
-            </label>
-            <label>
-                Email:
-                <input type='text' onChange={handleEmailChange}/>
-            </label>
-            </div>
+            <div class='flex justify-between'>
+    <div>
+        <div class='ml-10'>
+        <label class='text-xl'>
+            Company Name
+            <input type='text' class='w-10/12 h-11 bg-white rounded-lg shadow-m text-black' onChange={handleCompanyNameChange}/>
+        </label>  
+        </div>
+    </div>  
+    <div class='mr-32'>
+        <label class='text-xl'>
+            Phone
+            <input type='text' placeholder='(xxx) xxx-xxxx' class='w-full h-11 bg-white rounded-lg shadow-m text-black' onChange={handlePhoneChange}/>
+        </label>
+    </div>
+    <div class='ml-33 pr-'>
+        <label class='text-xl'>
+            Email:
+            <input type='text' class='w-full h-11 bg-white rounded-lg shadow-m text-black' onChange={handleEmailChange}/>
+        </label>
+    </div>
+</div>
             <br />
             <label>
                 Business Type:
@@ -460,8 +469,9 @@ const Form = () => {
                 )}
             </label>
             <br />      
-            <button type="submit">Send My Free Awesome.Social Strategy Now!</button>
+            <button type="submit" class='mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-900 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none'>Send My Free Awesome.Social Strategy Now!</button>
         </form>
+        </div>
     );
 };
 
