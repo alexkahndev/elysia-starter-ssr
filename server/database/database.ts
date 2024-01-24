@@ -28,5 +28,3 @@ async function testConnection() {
   testConnection();
 
 testConnection()
-    .then(() => console.log('Database connection successful'))
-    .catch(error => console.error('Failed to connect to the database', error));
