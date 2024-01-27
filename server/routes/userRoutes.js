@@ -3,9 +3,9 @@ import { db } from '../database/database';
 import * as UserRepository from '../database/userRepository'
 import axios from 'axios';
 import { useEffect } from 'react';
-import { configDotenv } from 'dotenv';
 
-require('dotenv').config();
+axios.defaults.headers.common["Accept-Encoding"] = "gzip";
+
 const userRouter = express.Router();
 
 userRouter.post('/create-user', async (req, res) => {
