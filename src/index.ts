@@ -4,27 +4,39 @@ import { renderToReadableStream } from 'react-dom/server'
 import { createElement } from "react";
 import App from './react/App'
 
+
+const port = Bun.env.PORT || 3000;
+
 // bundle client side react-code each time the server starts
 await Bun.build({
-  entrypoints: ['./src/react/index.tsx'],
+  entrypoints: ['./src/react/main.tsx'],
   outdir: './public',
 });
 
 const app = new Elysia()
   .use(staticPlugin())
   .get('/', async () => {
+    try {
+      // create our react App component
+      const app = createElement(App)
 
-    // create our react App component
-    const app = createElement(App)
+      // render the app component to a readable stream
+      const stream = await renderToReadableStream(app, {
+        bootstrapScripts: ['/public/main.js']
+      })
 
-    // render the app component to a readable stream
-    const stream = await renderToReadableStream(app, {
-      bootstrapScripts: ['/public/index.js']
-    })
-
-    // output the stream as the response
-    return new Response(stream, {
-      headers: { 'Content-Type': 'text/html' }
-    })
+      // output the stream as the response
+      return new Response(stream, {
+        headers: { 'Content-Type': 'text/html' }
+      })
+    } catch (error) {
+      console.error(`Error occurred during server-side rendering: ${error}`);
+      throw error; // re-throw the error after logging
+    }
   })
-  .listen(3000)
+  .listen(3000, () => {
+    console.log(`server started on port ${port}`)
+  })
+  .on('error', (error) => {
+    console.error(`Server error: ${error}`);
+  });
