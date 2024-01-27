@@ -23474,7 +23474,7 @@ var require_jsx_dev_runtime = __commonJS((exports, module) => {
 // node_modules/sched
 var client = __toESM(require_client(), 1);
 
-// node_modules/sche
+// node_modules/scheduler/
 var import_react = __toESM(require_react(), 1);
 var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 var App = () => {

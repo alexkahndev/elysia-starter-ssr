@@ -3,8 +3,8 @@ import { Elysia } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
-import { createElement } from "react";
-import App from "./react/App";
+import { ReactNode, createElement } from "react";
+import App from "./react/pages/App";
 
 // Define the port for the server to listen on, defaulting to 3000 if not provided in the environment
 const port = Bun.env.PORT || 3000;
@@ -19,6 +19,26 @@ await Bun.build({
 // Flag to toggle between Swagger UI and Scalar (Elysia's default)
 // This can be useful if you prefer Swagger's UI for API documentation
 const doYouLikeSwaggerUIBetter = false;
+
+async function renderAndRespond(component: ReactNode) {
+  try {
+    // Render the component to a readable stream
+    const stream = await renderToReadableStream(component, {
+      bootstrapScripts: ["main.js"],
+    });
+
+    // Output the stream as the response
+    // The Content-Type header is set to "text/html" to indicate that the response contains HTML
+    return new Response(stream, {
+      headers: { "Content-Type": "text/html" },
+    });
+  } catch (error) {
+    // Log any errors that occur during server-side rendering
+    console.error(`Error occurred during server-side rendering: ${error}`);
+    // Re-throw the error after logging
+    throw error;
+  }
+}
 
 // Create a new Elysia server instance
 export const server = new Elysia()
@@ -42,16 +62,8 @@ export const server = new Elysia()
       // Create our React App component
       const app = createElement(App);
 
-      // Render the App component to a readable stream
-      const stream = await renderToReadableStream(app, {
-        bootstrapScripts: ["main.js"],
-      });
+      return renderAndRespond(app);
 
-      // Output the stream as the response
-      // The Content-Type header is set to "text/html" to indicate that the response contains HTML
-      return new Response(stream, {
-        headers: { "Content-Type": "text/html" },
-      });
     } catch (error) {
       // Log any errors that occur during server-side rendering
       console.error(`Error occurred during server-side rendering: ${error}`);
