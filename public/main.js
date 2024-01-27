@@ -16,7 +16,7 @@ var __toESM = (mod, isNodeMode, target) => {
 };
 var __commonJS = (cb, mod) => () => (mod || cb((mod = { exports: {} }).exports, mod), mod.exports);
 
-// ../assets/svg/brand_logo.svgcheduler.develo
+// node_modules/scheduler/cjs/scheduler.develo
 var require_react_development = __commonJS((exports, module) => {
   if (true) {
     (function() {
@@ -1800,7 +1800,7 @@ var require_react_development = __commonJS((exports, module) => {
   }
 });
 
-// ../assets/svg/brand_logo.sv
+// node_modules/scheduler/cjs/
 var require_react = __commonJS((exports, module) => {
   var react_development = __toESM(require_react_development(), 1);
   if (false) {
@@ -1809,7 +1809,7 @@ var require_react = __commonJS((exports, module) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgcheduler.development.js
+// node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS((exports) => {
   if (true) {
     (function() {
@@ -2255,7 +2255,7 @@ var require_scheduler_development = __commonJS((exports) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgche
+// node_modules/scheduler/cjs/sche
 var require_scheduler = __commonJS((exports, module) => {
   var scheduler_development = __toESM(require_scheduler_development(), 1);
   if (false) {
@@ -2264,7 +2264,7 @@ var require_scheduler = __commonJS((exports, module) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgcheduler.development.js
+// node_modules/scheduler/cjs/scheduler.development.js
 var require_react_dom_development = __commonJS((exports) => {
   var React = __toESM(require_react(), 1);
   var Scheduler = __toESM(require_scheduler(), 1);
@@ -22574,7 +22574,7 @@ var require_react_dom_development = __commonJS((exports) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgche
+// node_modules/scheduler/cjs/sche
 var require_react_dom = __commonJS((exports, module) => {
   var react_dom_development = __toESM(require_react_dom_development(), 1);
   if (false) {
@@ -22583,7 +22583,7 @@ var require_react_dom = __commonJS((exports, module) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgched
+// node_modules/scheduler/cjs/sched
 var require_client = __commonJS((exports) => {
   var m = __toESM(require_react_dom(), 1);
   if (false) {
@@ -22609,7 +22609,7 @@ var require_client = __commonJS((exports) => {
   var i;
 });
 
-// ../assets/svg/brand_logo.svgcheduler.development.jspment.js
+// node_modules/scheduler/cjs/scheduler.development.jspment.js
 var require_react_jsx_dev_runtime_development = __commonJS((exports) => {
   var React = __toESM(require_react(), 1);
   if (true) {
@@ -23462,7 +23462,7 @@ var require_react_jsx_dev_runtime_development = __commonJS((exports) => {
   }
 });
 
-// ../assets/svg/brand_logo.svgcheduler.
+// node_modules/scheduler/cjs/scheduler.
 var require_jsx_dev_runtime = __commonJS((exports, module) => {
   var react_jsx_dev_runtime_development = __toESM(require_react_jsx_dev_runtime_development(), 1);
   if (false) {
@@ -23471,94 +23471,48 @@ var require_jsx_dev_runtime = __commonJS((exports, module) => {
   }
 });
 
-// ../assets/svg/bran
+// node_modules/sched
 var client = __toESM(require_client(), 1);
 
-// ../assets/svg/bra
+// node_modules/sche
 var import_react = __toESM(require_react(), 1);
-
-// ../assets/svg/brand_logo.svgc
-var brand_logo_default = "./brand_logo-0f5a7aa706141273.svg";
-
-// ../assets/svg/brand_logo.svgche
 var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-var Navbar = () => {
-  return jsx_dev_runtime.jsxDEV("div", {
-    className: "flex justify-between items-center px-8 py-4 max-w-[1600px] mx-auto",
-    children: [
-      jsx_dev_runtime.jsxDEV("a", {
-        href: "/",
-        children: jsx_dev_runtime.jsxDEV("img", {
-          src: brand_logo_default,
-          alt: "Awesome.Social Logo",
-          className: "h-10"
-        }, undefined, false, undefined, this)
-      }, undefined, false, undefined, this),
-      jsx_dev_runtime.jsxDEV("ul", {
-        children: [
-          jsx_dev_runtime.jsxDEV("li", {
-            className: "inline-block mr-4",
-            children: jsx_dev_runtime.jsxDEV("a", {
-              href: "/about",
-              className: "px-2 py-1 text-center",
-              children: "About"
-            }, undefined, false, undefined, this)
-          }, undefined, false, undefined, this),
-          jsx_dev_runtime.jsxDEV("li", {
-            className: "inline-block mr-4",
-            children: jsx_dev_runtime.jsxDEV("a", {
-              href: "/service",
-              className: "px-2 py-1 text-center",
-              children: "Service"
-            }, undefined, false, undefined, this)
-          }, undefined, false, undefined, this),
-          jsx_dev_runtime.jsxDEV("li", {
-            className: "inline-block",
-            children: jsx_dev_runtime.jsxDEV("button", {
-              className: "bg-deep-sapphire px-8 py-4 text-center text-white rounded-md",
-              children: "Log In"
-            }, undefined, false, undefined, this)
-          }, undefined, false, undefined, this)
-        ]
-      }, undefined, true, undefined, this)
-    ]
-  }, undefined, true, undefined, this);
-};
-
-// ../assets/svg/bra
-var jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1);
-function App() {
+var App = () => {
   const [count, setCount] = import_react.useState(0);
-  return jsx_dev_runtime2.jsxDEV("html", {
+  return jsx_dev_runtime.jsxDEV("html", {
     children: [
-      jsx_dev_runtime2.jsxDEV("head", {
+      jsx_dev_runtime.jsxDEV("head", {
         children: [
-          jsx_dev_runtime2.jsxDEV("meta", {
+          jsx_dev_runtime.jsxDEV("meta", {
             charSet: "utf-8"
           }, undefined, false, undefined, this),
-          jsx_dev_runtime2.jsxDEV("title", {
+          jsx_dev_runtime.jsxDEV("title", {
             children: "Awesome Social"
           }, undefined, false, undefined, this),
-          jsx_dev_runtime2.jsxDEV("meta", {
-            name: "description",
-            content: "Bun, Elysia & React"
+          jsx_dev_runtime.jsxDEV("link", {
+            rel: "icon",
+            href: "/favicon.ico",
+            type: "image/x-icon"
           }, undefined, false, undefined, this),
-          jsx_dev_runtime2.jsxDEV("meta", {
+          jsx_dev_runtime.jsxDEV("meta", {
+            name: "description",
+            content: "Awesome Social description"
+          }, undefined, false, undefined, this),
+          jsx_dev_runtime.jsxDEV("meta", {
             name: "viewport",
             content: "width=device-width, initial-scale=1"
           }, undefined, false, undefined, this)
         ]
       }, undefined, true, undefined, this),
-      jsx_dev_runtime2.jsxDEV("body", {
+      jsx_dev_runtime.jsxDEV("body", {
         children: [
-          jsx_dev_runtime2.jsxDEV(Navbar, {}, undefined, false, undefined, this),
-          jsx_dev_runtime2.jsxDEV("h1", {
+          jsx_dev_runtime.jsxDEV("h1", {
             children: [
               "Counter ",
               count
             ]
           }, undefined, true, undefined, this),
-          jsx_dev_runtime2.jsxDEV("button", {
+          jsx_dev_runtime.jsxDEV("button", {
             onClick: () => setCount(count + 1),
             children: "Increment"
           }, undefined, false, undefined, this)
@@ -23566,8 +23520,9 @@ function App() {
       }, undefined, true, undefined, this)
     ]
   }, undefined, true, undefined, this);
-}
+};
+var App_default = App;
 
-// ../assets/svg/bran
-var jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
-client.hydrateRoot(document, jsx_dev_runtime3.jsxDEV(App, {}, undefined, false, undefined, this));
+// node_modules/sched
+var jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1);
+client.hydrateRoot(document, jsx_dev_runtime2.jsxDEV(App_default, {}, undefined, false, undefined, this));
