@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   business_type_options,
   industries_options,
@@ -6,6 +7,10 @@ import {
   social_media_platform_options,
 } from './options';
 import PropTypes from 'prop-types';
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
+})
 
 const Form = () => {
   const [formState, setFormState] = useState({
@@ -20,6 +25,7 @@ const Form = () => {
     selectedPlatforms: [],
     socialMediaHandles: {},
   });
+  const [password, setPassword] = useState('');
 
   const handleChange = (fieldName, value) => {
     switch (fieldName) {
@@ -80,10 +86,37 @@ const Form = () => {
       },
     }));
   };
+  useEffect(() => {
+    const generatePassword = () => {
+        const password = Math.random().toString(36).slice(-16);
+        setPassword(password);
+        console.log(password);
+    }
+    generatePassword();
+}, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formState);
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      console.log('Submitting form');
+      console.log('Password', password);
+      console.log('Making API Request', formState);
+      const response = await api.post(`${import.meta.env.VITE_API_URL}/user/create-user`, {
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+        email: formState.email,
+        phone: formState.phone,
+        password: password,        
+        business_type: formState.businessType,
+        industry_type: formState.industry,
+        business_name: formState.companyName,
+        revenue: formState.annualRevenue,
+      })
+    }
+    catch (error) {
+      console.log('Error submitting form', error.message);
+      console.log('Error Data:', error.response && error.response.data);
+    }
   };
 
   return (
