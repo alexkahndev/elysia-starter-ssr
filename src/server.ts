@@ -19,14 +19,7 @@ const server = new Elysia()
       assets: './public',
       prefix: ''
     }  ))
-    /*
-    .use(swagger(
-      {
-        path: '/swagger',
-        excludeStaticFile: false,
-      }
-    ))
-    */
+    .use(swagger())
     .get('/', async () => {
       try {
         // create our react App component
