@@ -2,16 +2,17 @@ import { Elysia } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
+import { PrismaClient } from '@prisma/client'
 import { createElement } from "react";
-import Home from "./react/pages/Home";
-import About from "./react/pages/About";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 const port = Bun.env.PORT || 3000;
 
 await Bun.build({
   entrypoints: [
-    "./src/react/indexes/HomeIndex.tsx",
-    "./src/react/indexes/AboutIndex.tsx",
+    "./src/indexes/HomeIndex.tsx",
+    "./src/indexes/AboutIndex.tsx",
   ],
   outdir: "./build",
 });
@@ -32,6 +33,8 @@ async function handleRequest(
   });
 }
 
+const prisma = new PrismaClient();
+
 export const server = new Elysia()
   .use(
     staticPlugin({
@@ -46,6 +49,12 @@ export const server = new Elysia()
   )
   .get("/", () => handleRequest(Home, "/HomeIndex.js"))
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
+  .get("/api/users", async () => {
+    const users = await prisma.users.findMany();
+    return new Response(JSON.stringify(users), {
+      headers: { "Content-Type": "application/json" },
+    });
+  })
   .listen(3000, () => {
     console.log(`server started on port ${port}`);
   })

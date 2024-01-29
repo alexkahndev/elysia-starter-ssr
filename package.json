@@ -16,7 +16,8 @@
   "devDependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prisma": "^5.8.1"
   },
   "module": "src/server.ts"
 }
