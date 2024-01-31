@@ -1,4 +1,4 @@
-import { Elysia } from "elysia";
+import { Elysia, t } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
@@ -6,6 +6,7 @@ import { PrismaClient } from '@prisma/client'
 import { createElement } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import { createUser } from "./handlers/UserHandler";
 
 const port = Bun.env.PORT || 3000;
 
@@ -55,9 +56,24 @@ export const server = new Elysia()
       headers: { "Content-Type": "application/json" },
     });
   })
+  .post("/api/create-user", async ({ body }) => createUser(body), {
+    body: t.Object({
+      firstName: t.String(),
+      lastName: t.String(),
+      email: t.String(),
+      phone: t.String(),
+      password: t.String(),
+      business_type: t.String(),
+      industry_type: t.String(),
+      business_name: t.String(),
+      revenue: t.String(),
+    })
+    
+  })
   .listen(3000, () => {
     console.log(`server started on port ${port}`);
   })
   .on("error", (error) => {
     console.error(`Server error: ${error.code}`);
   });
+

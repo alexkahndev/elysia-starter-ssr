@@ -10,6 +10,7 @@
     "@elysiajs/static": "^0.6.0",
     "@elysiajs/swagger": "latest",
     "@prisma/client": "^5.9.0",
+    "dotenv": "^16.4.1",
     "elysia": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
