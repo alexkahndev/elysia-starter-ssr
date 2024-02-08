@@ -1,40 +1,65 @@
-# Bun, Elysia & React SSR Example
+# Server-Side Rendered (SSR) App with Bun, Elysia, and React
 
-A simple website using [Bun](https://bun.sh/docs/installation), [Elysia](https://elysiajs.com/) and [React](https://react.dev/) with support for server-side rendering.
+This application is a server-side rendered (SSR) app using Bun, Elysia, and React. It demonstrates the power of modern JavaScript technologies for building fast, efficient, and scalable web applications.
 
-- **Bun** the JS/TS bundler, runtime & package manager
-- **Elysia** a web framework for building performant web applications
-- **React** a JavaScript library for building user interfaces
+## Technologies
 
-## Getting Started
+### Bun
 
-Makr sure you have Bun installed
+Bun is a fast JavaScript runtime and toolkit. It's designed for speed and comes with a bundler, test runner, and Node.js-compatible package manager. Bun starts fast and runs fast, extending JavaScriptCore, the performance-minded JS engine built for Safari. It provides a minimal set of highly-optimized APIs for performing common tasks, like starting an HTTP server and writing files. Bun also includes a package manager, test runner, and bundler, making it an all-in-one runtime for JavaScript and TypeScript apps.
 
-```bash
-curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
-```
+### Elysia
 
-The run the following to download the project and install the required dependencies:
+Elysia is a performance-focused web framework. It follows WinterGC compliance, making it runtime agnostic. Elysia is designed with an Express-like syntax, type inference, middleware, file uploads, and plugins for JWT authentication, tRPC, and more. It takes full advantage of Bun's HTTP, file system, and hot reloading APIs. This makes Elysia one of the fastest Bun web frameworks.
 
-```bash
-git clone https://github.com/asleepace/bun-elysia-react-srr-example.git
-cd bun-elysia-react-srr-example
-bun install
-```
+One of the key features of Elysia is its support for Swagger, a powerful tool for designing, building, and documenting RESTful APIs. The Swagger middleware in Elysia auto-generates a Swagger page for your application, allowing you to easily test your routes. This can be a significant boost to your development workflow, as it allows you to quickly and easily verify that your routes are working as expected.
 
-To start the project in development mode, simply run the following:
+### React
 
-```bash
-bun run dev
-```
+React is a library for building web and native user interfaces. It allows you to build user interfaces out of individual components written in JavaScript. React is designed to let you seamlessly combine components written by independent people, teams, and organizations.
 
-## Helpful Resources
+## Server-Side Rendering (SSR) and Search Engine Optimization (SEO)
 
-If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin@asleepace.com :)
+Server-side rendering (SSR) is a technique where your site's content is rendered on the web server rather than the browser. This can lead to better search engine optimization (SEO) and a higher ranking for the webpage. SSR can benefit SEO by providing fully rendered content for complete indexing, faster page loads that search engines reward in rankings, and avoiding SEO pitfalls. SSR reduces the amount of work the client's browser has to do, ensuring a faster display of the web page. This is especially beneficial for users with slower internet connections or less powerful devices.
 
-- [How to server static files with Elysia](https://elysiajs.com/plugins/static.html)
-- [How to create a simple website with Elysia](https://elysiajs.com/quick-start.html)
-- [How to configure Bun with DOM types](https://stackoverflow.com/a/75726039/4326715)
-- [How to configure Bun with JSX documentation](https://bun.sh/docs/runtime/jsx)
-- [How to bundle assets with Bun documentation](https://bun.sh/docs/bundler)
-- [How to render react on the server](https://react.dev/reference/react-dom/server/renderToReadableStream)
+## React Hydration
+
+React Hydration is the process of making a server-rendered React app fully interactive on the client side. When a user requests a web page, the server sends the initial HTML render, which is just static HTML content. React Hydration takes this static HTML, which was initially rendered by the server, and attaches event listeners to make it fully interactive on the client side. During hydration, React works quickly in a virtual DOM to match up the existing content with what the application renders, saving time from manipulating the DOM unnecessarily. It is this hydration that makes SSR worthwhile.
+
+## Installation
+
+To install Bun, run the following command:
+
+\`\`\`bash
+curl -fsSL https://bun.sh/install | bash
+\`\`\`
+
+This command is supported on macOS, Linux, and WSL.
+
+To create a new Elysia app from scratch, run the following command:
+
+\`\`\`bash
+bun create elysia your-app
+\`\`\`
+
+Replace `your-app` with the name of your application.
+
+## Running the Application
+
+To run create-ak-app and have this full stack app ready for you, follow these steps:
+
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd create-ak-app`
+3. Install dependencies: `bun install`
+4. Start the development server: `bun dev`
+
+Enjoy your coding!
+
+## References
+
+For more information on these technologies, refer to their official documentation:
+
+- [(https://bun.sh/)]
+- [(https://elysiajs.com/)]
+- [(https://react.dev/)]
+\`\`\`

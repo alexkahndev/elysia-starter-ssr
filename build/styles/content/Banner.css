@@ -1,0 +1,54 @@
+.banner {
+   padding: 5svh 2.5svw;
+   text-wrap: balance;
+}
+
+.banner h2 {
+    margin:0;
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+}
+
+.banner section {
+    margin-top: 2.5svh;
+    background-color: var(--secondary-color);
+    border: 1svmin solid var(--primary-color);
+    border-radius: 2.5svmin;
+    display: flex;
+    text-align: center;
+}
+
+.banner section article {
+    padding: 2.5svmin;
+}
+
+.banner section article img {
+    height: 10svh;
+}
+.banner section article h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.banner section article p {
+    font-size: 1.25rem;
+    color: var(--quaternary-color);
+   
+}
+
+.banner section article a {
+    margin-top: 2.5svh;
+    padding: 1.25svh 2.5svw;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    text-decoration: none;
+    border-radius: 0.5svmin;
+    transition: all 0.3s ease;
+}
+
+.banner section article a:hover {
+    background-color: #02074c;
+    color: var(--secondary-color);
+}

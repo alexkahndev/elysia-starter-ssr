@@ -1,25 +1,24 @@
 {
   "name": "awesome-social",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css}\"",
     "dev": "bun run --watch src/server.ts"
   },
   "dependencies": {
-    "@elysiajs/static": "^0.6.0",
-    "@elysiajs/swagger": "latest",
-    "@prisma/client": "^5.9.0",
-    "dotenv": "^16.4.1",
-    "elysia": "latest",
+    "@elysiajs/static": "^0.8.0",
+    "@elysiajs/swagger": "^0.8.0",
+    "@prisma/client": "^5.9.1",
+    "elysia": "^0.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "bun-types": "latest",
-    "prisma": "^5.8.1"
+    "bun-types": "^1.0.26",
+    "prisma": "^5.9.1"
   },
   "module": "src/server.ts"
 }

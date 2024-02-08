@@ -10,6 +10,8 @@ const About = () => {
         <title>Bun, Elysia & React</title>
         <meta name="description" content="Bun, Elysia & React" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/styles/About.css" />
+        <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
         <Navbar />
