@@ -1,0 +1,21 @@
+@import url(./utils/Navbar.css);
+@import url(./utils/Footer.css);
+@import url(./content/Demo.css);
+@import url(./content/Banner.css);
+@import url(./content/Testimonials.css);
+@import url('https://fonts.googleapis.com/css?family=Figtree&display=swap');
+
+:root {
+    --primary-color: #082567;
+    --secondary-color: #ffd500;
+    --tertiary-color: #f0f0f0;
+    --quaternary-color: #333;
+    --font-family: 'Figtree', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--tertiary-color);
+}
