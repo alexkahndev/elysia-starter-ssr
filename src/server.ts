@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 
+const host = Bun.env.HOST || "localhost";
 const port = Bun.env.PORT || 3000;
 
 await Bun.build({
@@ -54,7 +55,7 @@ export const server = new Elysia()
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
   .listen(3000, () => {
-    console.log(`server started on port ${port}`);
+    console.log(`server started on http://${host}:${port}`);
   })
   .on("error", (error) => {
     console.error(`Server error: ${error.code}`);
