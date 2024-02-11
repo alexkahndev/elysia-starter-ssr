@@ -1,8 +1,8 @@
-import { Navbar } from "../components/utils/Navbar";
-import { Demo } from "../components/content/Demo";
-import { Banner } from "../components/content/Banner";
-import { Footer } from "../components/utils/Footer";
-import { Testimonials } from "../components/content/Testimonials";
+import Navbar from "../components/utils/Navbar";
+import Demo from "../components/content/Demo";
+import Banner from "../components/content/Banner";
+import Footer from "../components/utils/Footer";
+import Testimonials from "../components/content/Testimonials";
 
 const Home = () => {
   return (
@@ -16,11 +16,17 @@ const Home = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <Navbar />
-        <Demo />
-        <Banner />
-        <Testimonials />
-        <Footer />
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <Demo />
+          <Banner />
+          <Testimonials />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

@@ -1,19 +1,29 @@
-export const Navbar = () => {
+const Navbar = () => {
   return (
-    <header className="navbar">
-      <nav>
+    <nav className="Navbar">
+      <div className="Navbar__Brand">
         <a href="/">
-          <img src="/assets/brand_logo.svg" alt="Home" />
+          <img src="/assets/brand_logo.svg" alt="Awesome.Social Logo" />
         </a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/login" className="button">
-          Log In
-        </a>
-        <a href="/signup" className="button">
-          Sign Up
-        </a>
-      </nav>
-    </header>
+      </div>
+      <div className="Navbar__Menu">
+        <ul>
+          <li>
+            <a href="/">About</a>
+          </li>
+          <li>
+            <a href="/">Service</a>
+          </li>
+          <li>
+            <a href="/" className="Navbar__Button">Login</a>
+          </li>
+          <li>
+            <a href="/" className="Navbar__Button">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
+
+export default Navbar;
