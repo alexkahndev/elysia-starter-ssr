@@ -1,60 +1,32 @@
-.navbar {
-  box-shadow: 0 2svh 4svh 0 rgba(0,0,0,0.06);
-}
-
-.navbar nav {
+.Navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.75svh 2svw;
+  padding: 1rem 1.5rem;
+  background-color: white;
 }
 
-.navbar nav a {
-  color: var(--quaternary-color);
-  text-decoration: none;
-  font-size: 1.25rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+.Navbar__Brand img {
+  height: 2rem;
 }
 
-.navbar nav a img {
-  width: 35svw;
+.Navbar__Menu ul {
+  float: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.navbar nav a:hover {
+.Navbar__Menu a {
   color: var(--primary-color);
+  padding: 0.25rem;
+  font-weight: 500;
 }
 
-.navbar nav a:not(:first-child)::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.2svh;
-  background-color: var(--primary-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.navbar nav a:not(:first-child):hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.navbar nav a.button {
+.Navbar__Menu a.Navbar__Button {
   background-color: var(--primary-color);
   color: var(--tertiary-color);
-  padding: 1.25svh 2svw;
-  border-radius: 0.5svmin;
-  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
 }
-
-.navbar nav a.button:hover {
-  color: var(--secondary-color);
-  background-color: #02074c;
-}
-
-

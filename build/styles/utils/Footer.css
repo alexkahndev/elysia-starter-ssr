@@ -1,4 +1,6 @@
-.footer {
+.Footer {
+    padding: 1rem 1.5rem;
     text-align: center;
     color: var(--primary-color);
+    background-color: #fff;
 }
