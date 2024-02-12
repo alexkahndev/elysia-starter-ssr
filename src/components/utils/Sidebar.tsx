@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 const Sidebar = () => {
   useEffect(() => {
     const route = window.location.pathname;
-    const links = document.querySelectorAll('.Sidebar__Menu a');
+    const links = document.querySelectorAll('.Sidebar a');
     links.forEach((link) => {
       if (link.getAttribute('href') === route) {
         link.classList.add('Active');
@@ -13,56 +13,42 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <nav className="Sidebar">
-      <section className="Sidebar__Content">
-        <header className="Sidebar__Brand">
+    <aside className="Sidebar">
+      <nav>
+        <section className="Sidebar_Brand">
           <a href="/services">
             <img src="/assets/icon.svg" alt="logo" />
           </a>
-        </header>
-        <main className="Sidebar__Menu">
-          <ul>
-            <li>
-              <a href="/services">
-                <Icon.Kanban />
-              </a>
-            </li>
-            <li>
-              <a href="/history">
-                <Icon.Hourglass />
-              </a>
-            </li>
-            <li>
-              <a href="/dashboard">
-                <Icon.PieChart />
-              </a>
-            </li>
-            <li>
-              <a href="/print-report">
-                <Icon.Layers />
-              </a>
-            </li>
-            <li>
-              <a href="/faqs">
-                <Icon.FileEarmarkText />
-              </a>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <a href="/support">
-                <Icon.QuestionCircle />
-              </a>
-            </li>
-            <li>
-              <a href="/settings">
-                <Icon.Gear />
-              </a>
-            </li>
-          </ul>
-        </main>
-      </section>
-    </nav>
+        </section>
+        <section className="Sidebar__Menu">
+          <aside>
+            <a href="/services">
+              <Icon.Kanban />
+            </a>
+            <a href="/history">
+              <Icon.Hourglass />
+            </a>
+            <a href="/dashboard">
+              <Icon.PieChart />
+            </a>
+            <a href="/print-report">
+              <Icon.Layers />
+            </a>
+            <a href="/faqs">
+              <Icon.FileEarmarkText />
+            </a>
+          </aside>
+          <aside>
+            <a href="/support">
+              <Icon.QuestionCircle />
+            </a>
+            <a href="/settings">
+              <Icon.Gear />
+            </a>
+          </aside>
+        </section>
+      </nav>
+    </aside>
   );
 };
 

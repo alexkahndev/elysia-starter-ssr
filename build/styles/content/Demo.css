@@ -4,21 +4,28 @@
     justify-content: space-between;
     background-image: url(../../assets/hero.svg);
     align-items: center;
+    gap: 5rem;
 }
 
-.Demo > section video, .Demo > section {
-    max-width: 700px;
+.Demo__Content {
+    width: 100%;
 }
 
-.Demo h1 {
+.Demo__Content h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: var(--secondary-color);
     font-weight: 600;
 }
 
-.Demo p {
+.Demo__Content p {
     font-size: 1.5rem;
     color: var(--tertiary-color);
     font-weight: normal;
+}
+
+.Demo__Video > video {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
 }

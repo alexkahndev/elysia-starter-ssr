@@ -4,16 +4,16 @@
 
 .Banner > header h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 600;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 }
 
-.Banner > main {
+.Banner > section {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 2rem;
     gap: 1rem;
 }
 

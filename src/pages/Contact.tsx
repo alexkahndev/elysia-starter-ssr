@@ -1,6 +1,6 @@
-import Navbar from "../components/utils/Navbar";
-import Footer from "../components/utils/Footer";
-import { useState } from "react";
+import { Navbar } from '../components/utils/Navbar';
+import { Footer } from '../components/utils/Footer';
+import { useState } from 'react';
 
 const Contact = () => {
   const [count, setCount] = useState(0);
@@ -15,15 +15,9 @@ const Contact = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <header>
-
-        </header>
-        <main>
-
-        </main>
-        <footer>
-          
-        </footer>
+        <Navbar />
+        <main></main>
+        <Footer />
       </body>
     </html>
   );
