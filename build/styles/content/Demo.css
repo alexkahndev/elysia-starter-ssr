@@ -6,18 +6,18 @@
     align-items: center;
 }
 
-.Demo__Video video, .Demo__Title {
+.Demo > section video, .Demo > section {
     max-width: 700px;
 }
 
-.Demo__Title h1 {
+.Demo h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     color: var(--secondary-color);
     font-weight: 600;
 }
 
-.Demo__Title p {
+.Demo p {
     font-size: 1.5rem;
     color: var(--tertiary-color);
     font-weight: normal;

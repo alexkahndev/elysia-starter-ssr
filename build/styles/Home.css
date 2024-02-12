@@ -34,11 +34,11 @@ body {
   flex-flow: column;
 }
 
-header, footer {
+body > header, body > footer {
   flex: 0 1 auto;
 }
 
-main {
+body > main {
   flex: 1 1 auto;
 }
 
@@ -60,6 +60,6 @@ button {
 }
 
 article, nav {
-  max-width: 1600px;
+  max-width: var(--screen--size);
   margin: 0 auto;
 }

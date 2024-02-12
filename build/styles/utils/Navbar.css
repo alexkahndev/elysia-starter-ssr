@@ -6,24 +6,24 @@
   background-color: white;
 }
 
-.Navbar__Brand img {
+.Navbar > header img {
   height: 2rem;
 }
 
-.Navbar__Menu ul {
+.Navbar > main ul {
   float: left;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.Navbar__Menu a {
+.Navbar > main a {
   color: var(--primary-color);
   padding: 0.25rem;
   font-weight: 500;
 }
 
-.Navbar__Menu a.Navbar__Button {
+.Navbar > main a.Button {
   background-color: var(--primary-color);
   color: var(--tertiary-color);
   padding: 1rem 1.5rem;
