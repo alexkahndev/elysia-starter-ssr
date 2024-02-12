@@ -14,13 +14,13 @@ const Sidebar = () => {
 
   return (
     <nav className="Sidebar">
-      <div className="Sidebar__Content">
-        <div className="Sidebar__Brand">
+      <section className="Sidebar__Content">
+        <header className="Sidebar__Brand">
           <a href="/services">
             <img src="/assets/icon.svg" alt="logo" />
           </a>
-        </div>
-        <div className="Sidebar__Menu">
+        </header>
+        <main className="Sidebar__Menu">
           <ul>
             <li>
               <a href="/services">
@@ -60,8 +60,8 @@ const Sidebar = () => {
               </a>
             </li>
           </ul>
-        </div>
-      </div>
+        </main>
+      </section>
     </nav>
   );
 };

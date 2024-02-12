@@ -1,12 +1,12 @@
 const Navbar = () => {
   return (
     <nav className="Navbar">
-      <div className="Navbar__Brand">
+      <header>
         <a href="/">
           <img src="/assets/brand_logo.svg" alt="Awesome.Social Logo" />
         </a>
-      </div>
-      <div className="Navbar__Menu">
+      </header>
+      <main>
         <ul>
           <li>
             <a href="/">About</a>
@@ -15,13 +15,13 @@ const Navbar = () => {
             <a href="/">Service</a>
           </li>
           <li>
-            <a href="/" className="Navbar__Button">Login</a>
+            <a href="/" className="Button">Login</a>
           </li>
           <li>
-            <a href="/" className="Navbar__Button">Sign Up</a>
+            <a href="/" className="Button">Sign Up</a>
           </li>
         </ul>
-      </div>
+      </main>
     </nav>
   );
 };
