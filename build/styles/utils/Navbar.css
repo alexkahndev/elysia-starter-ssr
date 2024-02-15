@@ -1,4 +1,4 @@
-.Navbar {
+.Navbar > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,24 +6,24 @@
   background-color: white;
 }
 
-.Navbar > header img {
+.Navbar img {
   height: 2rem;
 }
 
-.Navbar > main ul {
+.Navbar aside {
   float: left;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.Navbar > main a {
+.Navbar a {
   color: var(--primary-color);
   padding: 0.25rem;
   font-weight: 500;
 }
 
-.Navbar > main a.Button {
+.Navbar a.Button {
   background-color: var(--primary-color);
   color: var(--tertiary-color);
   padding: 1rem 1.5rem;

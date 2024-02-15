@@ -7,8 +7,8 @@ export const Banner = () => {
           online presence
         </h1>
       </header>
-      <main>
-        <section className="Banner__Card">
+      <section>
+        <aside className="Banner__Card">
           <header>
             <img src="/assets/business-growth.svg" alt="Business Growth Icon" />
             <h2>Business Growth</h2>
@@ -22,8 +22,8 @@ export const Banner = () => {
           <footer>
             <a href="/services">Get Started</a>
           </footer>
-        </section>
-        <section className="Banner__Card">
+        </aside>
+        <aside className="Banner__Card">
           <header>
             <img
               src="/assets/client-portal.svg"
@@ -43,8 +43,8 @@ export const Banner = () => {
               View Portal
             </a>
           </footer>
-        </section>
-        <section className="Banner__Card">
+        </aside>
+        <aside className="Banner__Card">
           <header>
             <img
               src="/assets/strategy-form.svg"
@@ -62,10 +62,8 @@ export const Banner = () => {
           <footer>
             <a href="/form">Recieve Strategy</a>
           </footer>
-        </section>
-      </main>
+        </aside>
+      </section>
     </article>
   );
 };
-
-export default Banner;

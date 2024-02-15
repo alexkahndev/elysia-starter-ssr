@@ -1,6 +1,4 @@
 import Sidebar from "../components/utils/Sidebar";
-import useComponentSize from "../hooks/useComponentSize";
-import { useEffect, useRef, useState } from "react";
 
 const Services = () => {
   return (
