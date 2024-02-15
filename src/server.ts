@@ -165,9 +165,9 @@ export const server = new Elysia()
         return new Response(JSON.stringify({ error: "Error deleting service" }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
-        });
-    }
-})
+          });
+      }
+  })
   
   .listen(3000, () => {
     console.log(`server started on http://${host}:${port}`);
