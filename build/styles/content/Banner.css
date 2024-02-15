@@ -1,54 +1,68 @@
-.banner {
-   padding: 5svh 2.5svw;
-   text-wrap: balance;
+.Banner {
+    padding: 4rem 2rem;
 }
 
-.banner h2 {
-    margin:0;
+.Banner > header h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 }
 
-.banner section {
-    margin-top: 2.5svh;
-    background-color: var(--secondary-color);
-    border: 1svmin solid var(--primary-color);
-    border-radius: 2.5svmin;
+.Banner > section {
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.banner section article {
-    padding: 2.5svmin;
+.Banner__Card {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 0 8px var(--primary-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
-.banner section article img {
-    height: 10svh;
+.Banner__Card > header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-.banner section article h3 {
-    margin: 0;
+
+.Banner__Card > header img {
+    height: 8rem;
+}
+
+.Banner__Card > header h2 {
     font-size: 2rem;
     color: var(--primary-color);
+    text-align: center;
+    font-weight: 600;
 }
 
-.banner section article p {
-    font-size: 1.25rem;
-    color: var(--quaternary-color);
-   
+.Banner__Card > main p {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.banner section article a {
-    margin-top: 2.5svh;
-    padding: 1.25svh 2.5svw;
+.Banner__Card > footer a {
     background-color: var(--primary-color);
     color: var(--tertiary-color);
-    text-decoration: none;
-    border-radius: 0.5svmin;
-    transition: all 0.3s ease;
-}
-
-.banner section article a:hover {
-    background-color: #02074c;
-    color: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
 }

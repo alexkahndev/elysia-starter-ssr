@@ -17,9 +17,11 @@ const Home = () => {
       </head>
       <body>
         <Navbar />
-        <Demo />
-        <Banner />
-        <Testimonials />
+        <main>
+          <Demo />
+          <Banner />
+          <Testimonials />
+        </main>
         <Footer />
       </body>
     </html>

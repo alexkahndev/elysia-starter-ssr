@@ -6,6 +6,7 @@ import { PrismaClient } from "@prisma/client";
 import { createElement } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
@@ -16,6 +17,7 @@ await Bun.build({
     "./src/indexes/HomeIndex.tsx",
     "./src/indexes/AboutIndex.tsx",
     "./src/indexes/ServicesIndex.tsx",
+    "./src/indexes/ContactIndex.tsx"
   ],
   outdir: "./build",
   minify: true,
@@ -54,6 +56,7 @@ export const server = new Elysia()
   .get("/", () => handleRequest(Home, "/HomeIndex.js"))
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
+  .get("/contact", () => handleRequest(Contact, "/ContactIndex.js"))
   
   //API Endpoints for services
 

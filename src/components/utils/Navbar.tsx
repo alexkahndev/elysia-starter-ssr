@@ -1,18 +1,16 @@
 export const Navbar = () => {
   return (
-    <header className="navbar">
+    <header className="Navbar">
       <nav>
         <a href="/">
-          <img src="/assets/brand_logo.svg" alt="Home" />
+          <img src="/assets/brand_logo.svg" alt="Awesome.Social Logo" />
         </a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/login" className="button">
-          Log In
-        </a>
-        <a href="/signup" className="button">
-          Sign Up
-        </a>
+        <aside>
+          <a href="/">About</a>
+          <a href="/">Service</a>
+          <a href="/" className="Button">Login</a>
+          <a href="/" className="Button">Sign Up</a>
+        </aside>
       </nav>
     </header>
   );
