@@ -7,35 +7,59 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model RevenueBrackets {
-  id          Int     @id @default(autoincrement())
-  name        String?
-  min_revenue Int?
-  max_revenue Int?
-}
-
 model appuser {
-  id            Int     @id @default(autoincrement())
-  user_id_token String? @db.VarChar(255)
-  first_name    String? @db.VarChar(255)
-  last_name     String? @db.VarChar(255)
-  email         String? @db.VarChar(255)
-  phone         String? @db.VarChar(255)
-  password      String? @db.VarChar(255)
-  business_type String? @db.VarChar(255)
-  industry_type String? @db.VarChar(255)
-  business_name String? @db.VarChar(255)
-  revenue       String? @db.VarChar(255)
+  id              Int               @id @default(autoincrement())
+  user_id_token   String?           @db.VarChar(255)
+  first_name      String?           @db.VarChar(255)
+  last_name       String?           @db.VarChar(255)
+  email           String?           @db.VarChar(255)
+  phone           String?           @db.VarChar(255)
+  password        String?           @db.VarChar(255)
+  business_type   String?           @db.VarChar(255)
+  industry_type   String?           @db.VarChar(255)
+  business_name   String?           @db.VarChar(255)
+  revenue         String?           @db.VarChar(255)
+  serviceuser     serviceuser[]
+  socialmediauser socialmediauser[] @ignore
 }
 
-model users {
-  user_id         Int       @id @default(autoincrement())
-  username        String?   @unique
-  email           String?   @unique
-  first_name      String?
-  last_name       String?
-  user_token      String?   @unique
-  revenue_bracket Int?
-  created_at      DateTime? @default(now()) @db.Timestamp(6)
-  updated_at      DateTime? @default(now()) @db.Timestamp(6)
+model services {
+  service_id                                     Int           @id @default(autoincrement())
+  service_name                                   String        @unique(map: "service_name_unique") @db.VarChar(255)
+  service_description                            String?
+  price                                          Decimal       @db.Decimal(10, 2)
+  category                                       String?       @db.VarChar(255)
+  serviceuser_serviceuser_service_idToservices   serviceuser[] @relation("serviceuser_service_idToservices")
+  serviceuser_serviceuser_service_nameToservices serviceuser[] @relation("serviceuser_service_nameToservices")
+}
+
+model serviceuser {
+  user_id                                     Int
+  service_id                                  Int
+  service_name                                String?   @db.VarChar(255)
+  services_serviceuser_service_idToservices   services  @relation("serviceuser_service_idToservices", fields: [service_id], references: [service_id], onDelete: NoAction, onUpdate: NoAction)
+  services_serviceuser_service_nameToservices services? @relation("serviceuser_service_nameToservices", fields: [service_name], references: [service_name], onDelete: NoAction, onUpdate: NoAction)
+  appuser                                     appuser   @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([user_id, service_id])
+}
+
+model socialmedia {
+  platform_id                                                Int               @id @default(autoincrement())
+  platform_name                                              String            @unique(map: "platform_name_unique") @db.VarChar(255)
+  socialmediauser_socialmediauser_platform_idTosocialmedia   socialmediauser[] @relation("socialmediauser_platform_idTosocialmedia") @ignore
+  socialmediauser_socialmediauser_platform_nameTosocialmedia socialmediauser[] @relation("socialmediauser_platform_nameTosocialmedia") @ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model socialmediauser {
+  id                                                     Int?
+  platform_name                                          String?      @db.VarChar(255)
+  platform_id                                            Int?
+  platform_handle                                        String       @db.VarChar(255)
+  appuser                                                appuser?     @relation(fields: [id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  socialmedia_socialmediauser_platform_idTosocialmedia   socialmedia? @relation("socialmediauser_platform_idTosocialmedia", fields: [platform_id], references: [platform_id], onDelete: NoAction, onUpdate: NoAction)
+  socialmedia_socialmediauser_platform_nameTosocialmedia socialmedia? @relation("socialmediauser_platform_nameTosocialmedia", fields: [platform_name], references: [platform_name], onDelete: NoAction, onUpdate: NoAction)
+
+  @@ignore
 }
