@@ -1,6 +1,6 @@
 import Sidebar from "../components/utils/Sidebar";
-import useComponentSize from "../hooks/useComponentSize";
-import { useEffect, useRef, useState } from "react";
+import SearchBar from "../components/utils/SearchBar";
+import ServiceCards from "../components/content/ServiceCards";
 
 const Services = () => {
   return (
@@ -15,8 +15,13 @@ const Services = () => {
       </head>
       <body style={{marginLeft: 72}}>
         <Sidebar/>
-        <h1>Serivces</h1>
-      </body>
+        <header>
+        <SearchBar />
+      </header>
+      <main>
+        <ServiceCards />
+      </main>
+      </body>   
     </html>
   );
 };
