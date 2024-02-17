@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
-const port = Bun.env.PORT || 4000;
+const port = Bun.env.PORT || 3000;
 
 await Bun.build({
   entrypoints: [
@@ -22,8 +22,6 @@ await Bun.build({
   outdir: "./build",
   minify: true,
 });
-
-console.log("Bun build completed");
 
 const doYouLikeSwaggerUIBetter = false;
 
@@ -59,7 +57,7 @@ export const server = new Elysia()
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
   .get("/contact", () => handleRequest(Contact, "/ContactIndex.js"))
-  .listen(4000, () => {
+  .listen(3000, () => {
     console.log(`server started on http://${host}:${port}`);
   })
   .on("error", (error) => {
