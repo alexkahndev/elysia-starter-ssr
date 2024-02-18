@@ -1,7 +1,7 @@
 import {Search, Bell, ChevronDown} from 'react-bootstrap-icons';
 import { useState } from 'react';
 
-const SearchBar = () => {
+export const SearchBar = () => {
   const [search, setSearch] = useState('');
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 

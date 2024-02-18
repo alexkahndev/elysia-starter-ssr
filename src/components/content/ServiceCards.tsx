@@ -1,6 +1,6 @@
 import {Box,Dot,ThreeDots} from 'react-bootstrap-icons';
 
-const ServiceCards = () => {
+export const ServiceCards = () => {
     return(
       <article className='ServicesBody'>
         <h1>Services</h1>

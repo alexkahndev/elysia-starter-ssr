@@ -2,7 +2,7 @@ import Sidebar from "../components/utils/Sidebar";
 import SearchBar from "../components/utils/SearchBar";
 import ServiceCards from "../components/content/ServiceCards";
 
-const Services = () => {
+export const Services = () => {
   return (
     <html>
       <head>
@@ -14,7 +14,9 @@ const Services = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body style={{marginLeft: 72}}>
+        <aside>
         <Sidebar/>
+        </aside>
         <header>
         <SearchBar />
       </header>
