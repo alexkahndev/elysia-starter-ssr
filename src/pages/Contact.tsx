@@ -15,15 +15,9 @@ const Contact = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <header>
-
-        </header>
-        <main>
-
-        </main>
-        <footer>
-          
-        </footer>
+        <header></header>
+        <main></main>
+        <footer></footer>
       </body>
     </html>
   );

@@ -13,17 +13,17 @@ export const Services = () => {
         <link rel="stylesheet" href="/styles/Services.css" />
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
-      <body style={{marginLeft: 72}}>
+      <body style={{ marginLeft: 72 }}>
         <aside>
-        <Sidebar/>
+          <Sidebar />
         </aside>
         <header>
-        <SearchBar />
-      </header>
-      <main>
-        <ServiceCards />
-      </main>
-      </body>   
+          <SearchBar />
+        </header>
+        <main>
+          <ServiceCards />
+        </main>
+      </body>
     </html>
   );
 };

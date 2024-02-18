@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface Size {
   width: number | undefined;
@@ -10,7 +10,7 @@ const useComponentSize = (...refs: React.RefObject<HTMLElement>[]): Size[] => {
 
   useEffect(() => {
     const updateSizes = () => {
-      const newSizes = refs.map(ref => {
+      const newSizes = refs.map((ref) => {
         if (ref.current) {
           return {
             width: ref.current.offsetWidth,
@@ -25,10 +25,10 @@ const useComponentSize = (...refs: React.RefObject<HTMLElement>[]): Size[] => {
 
     updateSizes();
 
-    window.addEventListener('resize', updateSizes);
+    window.addEventListener("resize", updateSizes);
 
     return () => {
-      window.removeEventListener('resize', updateSizes);
+      window.removeEventListener("resize", updateSizes);
     };
   }, [refs]);
 

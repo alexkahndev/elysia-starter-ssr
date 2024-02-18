@@ -15,10 +15,14 @@ const Navbar = () => {
             <a href="/">Service</a>
           </li>
           <li>
-            <a href="/" className="Button">Login</a>
+            <a href="/" className="Button">
+              Login
+            </a>
           </li>
           <li>
-            <a href="/" className="Button">Sign Up</a>
+            <a href="/" className="Button">
+              Sign Up
+            </a>
           </li>
         </ul>
       </main>

@@ -1,13 +1,13 @@
-import * as Icon from 'react-bootstrap-icons';
-import { useEffect } from 'react';
+import * as Icon from "react-bootstrap-icons";
+import { useEffect } from "react";
 
 const Sidebar = () => {
   useEffect(() => {
     const route = window.location.pathname;
-    const links = document.querySelectorAll('.Sidebar__Menu a');
+    const links = document.querySelectorAll(".Sidebar__Menu a");
     links.forEach((link) => {
-      if (link.getAttribute('href') === route) {
-        link.classList.add('Active');
+      if (link.getAttribute("href") === route) {
+        link.classList.add("Active");
       }
     });
   }, []);
