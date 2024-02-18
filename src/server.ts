@@ -7,7 +7,7 @@ import { createElement } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Services from "./pages/Services";
+import {Services} from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
 const port = Bun.env.PORT || 3000;

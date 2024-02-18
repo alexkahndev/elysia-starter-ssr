@@ -166,5 +166,3 @@ export const ServiceCards = () => {
     </article>
   );
 };
-
-export default ServiceCards;

@@ -57,5 +57,3 @@ export const SearchBar = () => {
     </article>
   );
 };
-
-export default SearchBar;
