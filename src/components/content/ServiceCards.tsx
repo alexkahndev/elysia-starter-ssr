@@ -30,7 +30,7 @@ export const ServiceCards = () => {
           <ThreeDots />
         </section>
       </section>
-      <main className="ServiceCards">
+      <section className="ServiceCards">
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
@@ -162,7 +162,7 @@ export const ServiceCards = () => {
           </p>
           <button className="viewServiceBtn">View</button>
         </section>
-      </main>
+      </section>
     </article>
   );
 };

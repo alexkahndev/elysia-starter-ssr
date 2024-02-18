@@ -1,6 +1,6 @@
 import Sidebar from "../components/utils/Sidebar";
-import {SearchBar} from "../components/utils/SearchBar";
-import {ServiceCards} from "../components/content/ServiceCards";
+import { SearchBar } from "../components/utils/SearchBar";
+import { ServiceCards } from "../components/content/ServiceCards";
 
 export const Services = () => {
   return (

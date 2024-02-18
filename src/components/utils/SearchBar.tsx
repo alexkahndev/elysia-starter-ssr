@@ -19,7 +19,6 @@ export const SearchBar = () => {
   };
 
   return (
-    <article>
       <section className="SearchBar">
         <ul className="SearchBox">
           <li>
@@ -54,6 +53,5 @@ export const SearchBar = () => {
           </li>
         </ul>
       </section>
-    </article>
   );
 };
