@@ -1,9 +1,9 @@
-import { Elysia } from "elysia";
+import { Elysia, t } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
-import { PrismaClient } from "@prisma/client";
 import { createElement } from "react";
+import { createUser, loginUser } from "./handlers/UserHandler";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -37,7 +37,6 @@ async function handleRequest(
   });
 }
 
-const prisma = new PrismaClient();
 
 export const server = new Elysia()
   .use(
@@ -54,6 +53,21 @@ export const server = new Elysia()
   .get("/", () => handleRequest(Home, "/HomeIndex.js"))
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
+  .post("/create-user", async ({ body }) => createUser(body), {
+    body: t.Object({
+      firstName: t.String(),
+      lastName: t.String(),
+      email: t.String(),
+      phone: t.String(),
+      password: t.String(),
+      business_type: t.String(),
+      industry_type: t.String(),
+      business_name: t.String(),
+      revenue: t.String(),
+    })
+    
+  })
+  .get("/login", () => loginUser())
   .listen(3000, () => {
     console.log(`server started on http://${host}:${port}`);
   })
