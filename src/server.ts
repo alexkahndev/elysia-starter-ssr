@@ -75,7 +75,7 @@ export const server = new Elysia()
   //API Endpoints for services
 
   //Retrieve list of all services
- .get("/services", async () => {
+ .get("/services/list", async () => {
     const services = await prisma.services.findMany();
     return new Response(JSON.stringify(services), {
       headers: { 'Content-Type': 'application/json' },
@@ -118,7 +118,7 @@ export const server = new Elysia()
   })
 
   //Create a new service
-  .post("/services", async (req) => {
+  .post("/services/create", async (req) => {
     let data;
     try {
       data = await req.request.json();    } catch (error) {
