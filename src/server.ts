@@ -4,6 +4,7 @@ import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
 import { createElement } from "react";
 import { createUser, loginUser } from "./handlers/UserHandler";
+import { getServices, getServiceById, getCategories, getServicesByCategory, createService, updateService, deleteService } from "./handlers/ServicesHandler";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -41,6 +42,7 @@ async function handleRequest(
 
 
 export const server = new Elysia()
+
   .use(
     staticPlugin({
       assets: "./build",
@@ -75,112 +77,44 @@ export const server = new Elysia()
   //API Endpoints for services
 
   //Retrieve list of all services
- .get("/services/list", async () => {
-    const services = await prisma.services.findMany();
-    return new Response(JSON.stringify(services), {
-      headers: { 'Content-Type': 'application/json' },
-    });
-  })
+ .get("/services/list", async () => getServices())
 
   //Retrieve a service based on its ID
   .get("/services/:id", async (req) => { 
     const id = parseInt(req.params.id);
-    const service = await prisma.services.findUnique({
-      where: { service_id: id },
-    });
-    return service
-      ? new Response(JSON.stringify(service), {
-          headers: { 'Content-Type': 'application/json' },
-        })
-      : new Response("Service not found", { status: 404 });
+    return getServiceById(id);
   })
-
   //Retrieves list of categories from stored services
-  .get("/services/categories", async () => { 
-    const categories = await prisma.services.findMany({
-      select: { category: true },
-      distinct: ['category'],
-    });
-    return new Response(JSON.stringify(categories), {
-      headers: { 'Content-Type': 'application/json' },
-    });
-  })
+  .get("/services/categories", async () => getCategories())
 
   //Retrieves list of services from a specific category
   .get("/services/category/:category", async (req) => { 
     const category = req.params.category;
-    const services = await prisma.services.findMany({
-      where: { category: category },
-    });
-    return new Response(JSON.stringify(services), {
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return getServicesByCategory(category);
   })
-
+  
   //Create a new service
-  .post("/services/create", async (req) => {
-    let data;
-    try {
-      data = await req.request.json();    } catch (error) {
-      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-    const createdService = await prisma.services.create({
-      data,
-    });
-    return new Response(JSON.stringify(createdService), {
-      headers: { 'Content-Type': 'application/json' },
-      status: 201,
-    });
+  .post("/services/create", async ({ body }) => createService(body), {
+    body: t.Object({
+      service_name: t.String(),
+      service_description: t.String(),
+      price: t.Number(),
+      category: t.String(),
+    })
+
   })
 
   //Update an existing service based on ID
-  .patch("/services/:id", async (req) => {
+  /*
+  .put("/services/:id", async (req: any, { body }: { body: {service_name: string, service_description: string, price: number, category: string }} ) => {
     const id = parseInt(req.params.id);
-    try {
-        let data;
-        if (req.body && typeof req.body === 'object') {
-            data = req.body;
-        } else {
-            const requestData = await req.request.text();
-            data = JSON.parse(requestData);
-        }
-        const updatedService = await prisma.services.update({
-            where: { service_id: id },
-            data,
-        });
-        return new Response(JSON.stringify(updatedService), {
-            headers: { 'Content-Type': 'application/json' },
-        });
-    } catch (error) {
-        console.error("Error processing request:", error);
-        return new Response(JSON.stringify({ error: "Error processing request"}), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-        });
-    }
-  })
+    return updateService(id, body);
+})*/
 
   //Delete an entry based on ID
   .delete("/services/:id", async (req) => {
     const id = parseInt(req.params.id);
-    try {
-        const deletedService = await prisma.services.delete({
-            where: { service_id: id },
-        });
-        return new Response(JSON.stringify({ message: "Service deleted successfully" }), {
-            status: 200, 
-            headers: { 'Content-Type': 'application/json' },
-        });
-      } catch (error) {
-        console.error("Error deleting service:", error);
-        return new Response(JSON.stringify({ error: "Error deleting service" }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-          });
-      }
+    return deleteService(id);
   })
   
   .listen(3000, () => {
