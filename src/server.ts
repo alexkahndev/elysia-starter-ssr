@@ -7,7 +7,7 @@ import { createElement } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Services from "./pages/Services";
+import { Services } from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
 const port = Bun.env.PORT || 3000;
@@ -17,7 +17,7 @@ await Bun.build({
     "./src/indexes/HomeIndex.tsx",
     "./src/indexes/AboutIndex.tsx",
     "./src/indexes/ServicesIndex.tsx",
-    "./src/indexes/ContactIndex.tsx"
+    "./src/indexes/ContactIndex.tsx",
   ],
   outdir: "./build",
   minify: true,

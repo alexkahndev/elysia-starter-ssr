@@ -1,6 +1,8 @@
 import Sidebar from "../components/utils/Sidebar";
+import { SearchBar } from "../components/utils/SearchBar";
+import { ServiceCards } from "../components/content/ServiceCards";
 
-const Services = () => {
+export const Services = () => {
   return (
     <html>
       <head>
@@ -11,12 +13,17 @@ const Services = () => {
         <link rel="stylesheet" href="/styles/Services.css" />
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
-      <body style={{marginLeft: 72}}>
-        <Sidebar/>
-        <h1>Serivces</h1>
+      <body style={{ marginLeft: 72 }}>
+        <aside>
+          <Sidebar />
+        </aside>
+        <header>
+          <SearchBar />
+        </header>
+        <main>
+          <ServiceCards />
+        </main>
       </body>
     </html>
   );
 };
-
-export default Services;

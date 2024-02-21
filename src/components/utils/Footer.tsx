@@ -1,9 +1,9 @@
-export const Footer = () => {
-    return (
-      <footer className="Footer">
-        <section>
-          <p>&copy; {new Date().getFullYear()} Awesome.Social</p>
-        </section>
-      </footer>
-    );
-}
+const Footer = () => {
+  return (
+    <article className="Footer">
+      <p>&copy; {new Date().getFullYear()} Awesome.Social</p>
+    </article>
+  );
+};
+
+export default Footer;

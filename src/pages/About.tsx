@@ -15,9 +15,9 @@ const About = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <Navbar />
+        <header></header>
         <main></main>
-        <Footer />
+        <footer></footer>
       </body>
     </html>
   );
