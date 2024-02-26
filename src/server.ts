@@ -19,6 +19,7 @@ await Bun.build({
     "./src/indexes/AboutIndex.tsx",
     "./src/indexes/ServicesIndex.tsx",
     "./src/indexes/ContactIndex.tsx",
+    "./src/indexes/HistoryIndex.tsx"
   ],
   outdir: "./build",
   minify: true,
