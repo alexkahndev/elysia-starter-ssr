@@ -5,27 +5,27 @@ export const Navbar = () => {
         <a href="/">
           <img src="/assets/brand_logo.svg" alt="Awesome.Social Logo" />
         </a>
-      </header>
       <main>
         <ul>
           <li>
-            <a href="/">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="/">Service</a>
+            <a href="/services">Services</a>
           </li>
           <li>
-            <a href="/" className="Button">
+            <a href="/login" className="Button">
               Login
             </a>
           </li>
           <li>
-            <a href="/" className="Button">
+            <a href="/signup" className="Button">
               Sign Up
             </a>
           </li>
         </ul>
       </main>
     </nav>
+  </header>
   );
 };
