@@ -5,7 +5,6 @@ export const Navbar = () => {
         <a href="/">
           <img src="/assets/brand_logo.svg" alt="Awesome.Social Logo" />
         </a>
-      <main>
         <ul>
           <li>
             <a href="/about">About</a>
@@ -24,7 +23,6 @@ export const Navbar = () => {
             </a>
           </li>
         </ul>
-      </main>
     </nav>
   </header>
   );
