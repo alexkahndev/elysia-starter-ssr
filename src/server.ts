@@ -8,6 +8,7 @@ import { getServices, getServiceById, getCategories, getServicesByCategory, crea
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import History from "./pages/History";
 import { Services } from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
@@ -58,7 +59,8 @@ export const server = new Elysia()
   .get("/", () => handleRequest(Home, "/HomeIndex.js"))
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
-  .post("/create-user", async ({ body }) => createUser(body), {
+  .get("/history", () => handleRequest(History, "/HistoryIndex.js"))
+  .post("/create-user", ({ body }) => createUser(body), {
     body: t.Object({
       firstName: t.String(),
       lastName: t.String(),

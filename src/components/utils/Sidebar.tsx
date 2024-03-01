@@ -1,7 +1,7 @@
 import * as Icon from "react-bootstrap-icons";
 import { useEffect } from "react";
 
-const Sidebar = () => {
+export const Sidebar = () => {
   useEffect(() => {
     const route = window.location.pathname;
     const links = document.querySelectorAll(".Sidebar__Menu a");
@@ -51,5 +51,3 @@ const Sidebar = () => {
     </aside>
   );
 };
-
-export default Sidebar;
