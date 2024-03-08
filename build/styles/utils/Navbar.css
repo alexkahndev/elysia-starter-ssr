@@ -1,6 +1,6 @@
 .Navbar nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
   padding: 1rem 1.5rem;
   background-color: white;
@@ -8,13 +8,7 @@
 
 .Navbar img {
   height: 2rem;
-}
-
-.Navbar aside {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  grid-column: 1;
 }
 
 .Navbar a {
@@ -29,3 +23,10 @@
   font-weight: 500;
 }
 
+.Navbar a:first-child {
+  margin-right: auto;
+}
+
+.Navbar a:not(:first-child):not(:last-child) {
+  margin-right: 1rem;
+}
