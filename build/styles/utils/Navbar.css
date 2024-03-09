@@ -1,6 +1,6 @@
-.Navbar > nav {
-  display: flex;
-  justify-content: space-between;
+.Navbar nav {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
   padding: 1rem 1.5rem;
   background-color: white;
@@ -8,25 +8,25 @@
 
 .Navbar img {
   height: 2rem;
-}
-
-.Navbar aside {
-  float: left;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  grid-column: 1;
 }
 
 .Navbar a {
-  color: var(--primary-color);
-  padding: 0.25rem;
-  font-weight: 500;
+  color: var(--quaternary-color);
 }
 
 .Navbar a.Button {
-  background-color: var(--primary-color);
-  color: var(--tertiary-color);
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
   font-weight: 500;
+}
+
+.Navbar a:first-child {
+  margin-right: auto;
+}
+
+.Navbar a:not(:first-child):not(:last-child) {
+  margin-right: 1rem;
 }
