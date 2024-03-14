@@ -1,0 +1,26 @@
+.Accordion {
+  margin: 0 auto;
+  max-width: 1300px;
+  margin-bottom: 1rem;
+}
+
+.Accordion:last-child {
+  margin-bottom: 0;
+}
+
+.Accordion summary {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.Accordion section {
+  border: 1px solid var(--primary-color);
+  border-top: none; 
+  padding: 0.5rem;
+  background-color: white;
+}
