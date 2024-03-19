@@ -1,8 +1,7 @@
-.Footer > section {
+.Footer > article {
     padding: 1rem 1.5rem;
     text-align: center;
     color: var(--primary-color);
-    background-color: #fff;
     max-width: var(--screen--size);
     margin: 0 auto;
 }

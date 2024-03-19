@@ -4,23 +4,31 @@
   margin-bottom: 1rem;
 }
 
-.Accordion:last-child {
-  margin-bottom: 0;
-}
-
 .Accordion summary {
   font-size: 1.5em;
   font-weight: bold;
-  color: white;
+  color: var(--quaternary-color);
   padding: 0.5rem;
   cursor: pointer;
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.Accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.Accordion summary::after {
+  content: '+';
+  color: var(--quaternary-color);
+}
+
+.Accordion[open] summary::after {
+  content: '-';
 }
 
 .Accordion section {
-  border: 1px solid var(--primary-color);
-  border-top: none; 
   padding: 0.5rem;
-  background-color: white;
 }

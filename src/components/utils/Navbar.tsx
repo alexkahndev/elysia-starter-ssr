@@ -7,6 +7,7 @@ export const Navbar = () => {
         </a>
         <a href="/about">About</a>
         <a href="/service">Service</a>
+        <a href="/faq">FAQ</a>
         <a href="/login" className="Button">
           Login
         </a>

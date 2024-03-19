@@ -1,6 +1,6 @@
 .Navbar nav {
   display: grid;
-  grid-template-columns: 1fr auto auto auto auto;
+  grid-template-columns: 1fr auto auto auto auto auto;
   align-items: center;
   padding: 1rem 1.5rem;
   background-color: white;
