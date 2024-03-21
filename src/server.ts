@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import History from "./pages/History";
+import FAQ from "./pages/FAQ";
+import FAQMain from "./pages/FAQMain";
 import { Services } from "./pages/Services";
 
 const host = Bun.env.HOST || "localhost";
@@ -20,7 +22,9 @@ await Bun.build({
     "./src/indexes/AboutIndex.tsx",
     "./src/indexes/ServicesIndex.tsx",
     "./src/indexes/ContactIndex.tsx",
-    "./src/indexes/HistoryIndex.tsx"
+    "./src/indexes/HistoryIndex.tsx",
+    "./src/indexes/FAQIndex.tsx",
+    "./src/indexes/FAQMainIndex.tsx"
   ],
   outdir: "./build",
   minify: true,
@@ -60,6 +64,8 @@ export const server = new Elysia()
   .get("/about", () => handleRequest(About, "/AboutIndex.js"))
   .get("/services", () => handleRequest(Services, "/ServicesIndex.js"))
   .get("/history", () => handleRequest(History, "/HistoryIndex.js"))
+  .get("/faqs", () => handleRequest(FAQ, "/FAQIndex.js"))
+  .get("/faq", () => handleRequest(FAQMain, "/FAQMainIndex.js"))
   .post("/create-user", ({ body }) => createUser(body), {
     body: t.Object({
       firstName: t.String(),
@@ -80,7 +86,7 @@ export const server = new Elysia()
   //API Endpoints for services
 
   //Retrieve list of all services
- .get("/services/list", async () => getServices())
+  .get("/services/list", async () => getServices())
 
   //Retrieve a service based on its ID
   .get("/services/:id", async (req) => { 
