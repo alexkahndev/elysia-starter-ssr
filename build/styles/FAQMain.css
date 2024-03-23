@@ -30,6 +30,8 @@ body {
   line-height: 1;
   display: flex;
   flex-flow: column;
+  max-width: var(--screen--size);
+  margin: 0 auto;
 }
 
 body > header, body > footer {
@@ -55,9 +57,4 @@ button {
   border: inherit;
   display: flex;
   background-color: inherit;
-}
-
-article, nav {
-  max-width: var(--screen--size);
-  margin: 0 auto;
 }

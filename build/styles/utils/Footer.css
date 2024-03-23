@@ -1,7 +1,15 @@
-.Footer > article {
-    padding: 1rem 1.5rem;
-    text-align: center;
-    color: var(--primary-color);
-    max-width: var(--screen--size);
-    margin: 0 auto;
+.Footer article {
+  padding: 2rem;
+  color: var(--quaternary-color);
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+
+.Footer article p {
+  margin-right: auto;
+}
+
+.Footer a:last-child{
+  margin-left: 1rem;
 }
