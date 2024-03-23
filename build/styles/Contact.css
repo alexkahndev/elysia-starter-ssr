@@ -54,8 +54,3 @@ button {
   display: flex;
   background-color: inherit;
 }
-
-article, nav {
-  max-width: var(--screen--size);
-  margin: 0 auto;
-}

@@ -3,6 +3,7 @@ import { Demo } from "../components/content/Demo";
 import { Banner } from "../components/content/Banner";
 import { Footer } from "../components/utils/Footer";
 import { Testimonials } from "../components/content/Testimonials";
+import { CookiePopup } from "../components/content/CookiePopup";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
           <Testimonials />
         </main>
         <Footer />
+        <CookiePopup />
       </body>
     </html>
   );
