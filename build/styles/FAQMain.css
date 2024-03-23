@@ -30,8 +30,6 @@ body {
   line-height: 1;
   display: flex;
   flex-flow: column;
-  max-width: var(--screen--size);
-  margin: 0 auto;
 }
 
 body > header, body > footer {

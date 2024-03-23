@@ -21,18 +21,16 @@ export const CookiePopup = () => {
     <>
       {showPopup && (
         <article className="Cookie__Popup">
-          <figure>
-            <h2>Want some cookies? 🍪</h2>
-            <p>
-              We use cookies to improve user experience and analyze website
-              traffic. By clicking "Accept", you agree to our website's cookie use
-              as described in our Cookie Policy.
-            </p>
-            <section>
-              <button onClick={acceptCookies} className="Accept">Accept</button>
-              <button onClick={() => setShowPopup(false)} className="Close">Close</button>
-            </section>
-          </figure>
+          <h2>Want some cookies? 🍪</h2>
+          <p>
+            We use cookies to improve user experience and analyze website
+            traffic. By clicking "Accept", you agree to our website's cookie use
+            as described in our Cookie Policy.
+          </p>
+          <section>
+            <button onClick={() => setShowPopup(false)} className="Close">Close</button>
+            <button onClick={acceptCookies} className="Accept">Accept</button>
+          </section>
         </article>
       )}
     </>
