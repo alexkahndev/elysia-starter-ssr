@@ -1,52 +1,65 @@
-import * as Icon from "react-bootstrap-icons";
-import { useEffect } from "react";
+import * as Icon from "./Icons";
 
-export const Sidebar = () => {
-  useEffect(() => {
-    const route = window.location.pathname;
-    const links = document.querySelectorAll(".Sidebar__Menu a");
-    links.forEach((link) => {
-      if (link.getAttribute("href") === route) {
-        link.classList.add("Active");
-      }
-    });
-  }, []);
+export const Sidebar = ({ onPageChange }: {onPageChange: (newPage: string) => void}) => {
+  const handlePageClick = (newPage: string) => {
+    onPageChange(newPage);
+    const buttons = document.querySelectorAll('.Sidebar button');
+    buttons?.forEach((button) => button.classList.remove('Active'));
+    document.getElementById(newPage)?.classList.add('Active');
+  };
 
   return (
     <aside className="Sidebar">
       <nav>
-        <section className="Sidebar_Brand">
-          <a href="/services">
+        <header>
+          <button onClick={() => handlePageClick("services")}>
             <img src="/assets/icon.svg" alt="logo" />
-          </a>
-        </section>
-        <section className="Sidebar__Menu">
-          <aside>
-            <a href="/services">
+          </button>
+        </header>
+        <main>
+          <span>
+            <button onClick={() => handlePageClick("services")} id="services">
               <Icon.Kanban />
-            </a>
-            <a href="/history">
-              <Icon.Hourglass />
-            </a>
-            <a href="/dashboard">
+            </button>
+            <label>Service</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("history")} id="history">
+              <Icon.HourGlass />
+            </button>
+            <label>History</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("dashboard")} id="dashboard">
               <Icon.PieChart />
-            </a>
-            <a href="/print-report">
-              <Icon.Layers />
-            </a>
-            <a href="/faqs">
+            </button>
+            <label>Dashboard</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("faqs")} id="faqs">
               <Icon.FileEarmarkText />
-            </a>
-          </aside>
-          <aside>
-            <a href="/support">
+            </button>
+            <label>FAQs</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("print-report")} id="print-report">
+              <Icon.Layers />
+            </button>
+            <label>Print Report</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("support")} id="support">
               <Icon.QuestionCircle />
-            </a>
-            <a href="/settings">
+            </button>
+            <label>Support</label>
+          </span>
+          <span>
+            <button onClick={() => handlePageClick("settings")} id="settings">
               <Icon.Gear />
-            </a>
-          </aside>
-        </section>
+            </button>
+            <label>Service</label>
+          </span>
+        </main>
       </nav>
     </aside>
   );
