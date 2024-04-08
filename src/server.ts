@@ -1,8 +1,10 @@
 import { Elysia, t } from 'elysia';
 import { staticPlugin } from '@elysiajs/static';
-import { renderToReadableStream } from 'react-dom/server';
+import { renderToReadableStream } from 'react-dom/server.browser';
 import { swagger } from '@elysiajs/swagger';
 import { createElement } from 'react';
+import { readdir } from "node:fs/promises";
+import * as path from "node:path";
 import { createUser, loginUser } from './handlers/UserHandler';
 import {
   getServices,
@@ -22,15 +24,21 @@ import ClientPortal from './pages/ClientPortal';
 const host = Bun.env.HOST || 'localhost';
 const port = Bun.env.PORT || 3000;
 
+// Define the directory with your entrypoints
+const entryDir = "./src/indexes";
+
+// Use readdir to get an array of filenames in the entry directory
+const files = await readdir(entryDir);
+
+// Filter the array to only include .tsx files
+const entrypoints = files.filter((file) => path.extname(file) === ".tsx");
+
+// Prepend the directory path to each entrypoint
+const entryPaths = entrypoints.map((file) => path.join(entryDir, file));
+
 await Bun.build({
-  entrypoints: [
-    './src/indexes/HomeIndex.tsx',
-    './src/indexes/AboutIndex.tsx',
-    './src/indexes/ContactIndex.tsx',
-    './src/indexes/ClientPortalIndex.tsx',
-    './src/indexes/FAQMainIndex.tsx',
-  ],
-  outdir: './build',
+  entrypoints: entryPaths,
+  outdir: "./build",
   minify: true,
 });
 
