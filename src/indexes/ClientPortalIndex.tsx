@@ -2,6 +2,6 @@
 /// <reference lib="dom.iterable" />
 
 import { hydrateRoot } from "react-dom/client";
-import History from "../pages/History";
+import ClientPortal from "../pages/ClientPortal";
 
-hydrateRoot(document, <History />);
+hydrateRoot(document, <ClientPortal />);

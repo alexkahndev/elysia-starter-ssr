@@ -1,4 +1,4 @@
-import { Box, Dot, ThreeDots } from "react-bootstrap-icons";
+import * as Icons from "../utils/Icons";
 
 export const ServiceCards = () => {
   return (
@@ -27,24 +27,24 @@ export const ServiceCards = () => {
               </select>
             </li>
           </ul>
-          <ThreeDots />
+          <Icons.ThreeDots />
         </section>
       </section>
       <section className="ServiceCards">
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box />
               <ul>
                 <li className="Category">Service A</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -56,17 +56,17 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box/>
               <ul>
                 <li className="Category">Service B</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -78,17 +78,17 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box />
               <ul>
                 <li className="Category">Service C</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -100,17 +100,17 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box/>
               <ul>
                 <li className="Category">Service D</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -122,17 +122,17 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box/>
               <ul>
                 <li className="Category">Service E</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -144,17 +144,17 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Box className="ServiceIcon" />
+              <Icons.Box/>
               <ul>
                 <li className="Category">Service F</li>
                 <ul className="CategoryInfo">
                   <li>11 Jan 2022</li>
-                  <Dot />
+                  <Icons.Dot />
                   <li>Category</li>
                 </ul>
               </ul>
             </section>
-            <ThreeDots />
+            <Icons.ThreeDots />
           </section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

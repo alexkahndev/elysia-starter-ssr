@@ -1,5 +1,5 @@
-import { Search, Bell, ChevronDown } from "react-bootstrap-icons";
 import { useState } from "react";
+import * as Icon from "../utils/Icons"
 
 export const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -22,7 +22,7 @@ export const SearchBar = () => {
       <section className="SearchBar">
         <ul className="SearchBox">
           <li>
-            <Search className="searchIcon" />
+            <Icon.Search />
             <input
               type="text"
               value={search}
@@ -35,14 +35,14 @@ export const SearchBar = () => {
         </ul>
         <ul className="notification-account">
           <li onClick={handleNotificationClick}>
-            <Bell />
+            <Icon.Bell />
           </li>
           <li>
             <img src="/assets/icon.svg" className="accountImage" />
           </li>
           <li className="accountName">Name Surname</li>
           <li>
-            <ChevronDown onClick={handleOptionsClick} />
+            <Icon.ChevronDown onClick={handleOptionsClick} />
             {isOptionsVisible && (
               <ul className="accountOptions">
                 <li>Option 1</li>
