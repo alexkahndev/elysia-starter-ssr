@@ -1,5 +1,5 @@
-import { ServiceCards } from '../../components/content/ServiceCards';
-import { Helmet } from 'react-helmet';
+import { ServiceCards } from "../../components/content/ServiceCards";
+import { Helmet } from "react-helmet";
 
 const Services = () => {
   return (

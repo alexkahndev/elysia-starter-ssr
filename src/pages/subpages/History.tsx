@@ -1,5 +1,5 @@
-import { Timeline } from '../../components/content/Timeline';
-import { Helmet } from 'react-helmet';
+import { Timeline } from "../../components/content/Timeline";
+import { Helmet } from "react-helmet";
 
 const History = () => {
   return (

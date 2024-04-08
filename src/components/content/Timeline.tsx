@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode } from "react";
 
 const Content1 = () => <p>Content 1</p>;
 const Content2 = () => <p>Content 2</p>;
@@ -15,7 +15,7 @@ export const Timeline = () => {
   const [modal, setModal] = useState<boolean>(false);
   const [content, setContent] = useState<ReactNode>(1);
 
-  const toggleModal= (num?: number) => {
+  const toggleModal = (num?: number) => {
     setContent(num);
     setModal(true);
   };
@@ -47,7 +47,7 @@ export const Timeline = () => {
           <li></li>
           <li>
             <label>May 2023</label>
-            <button onClick={() => toggleModal(1)}/>
+            <button onClick={() => toggleModal(1)} />
           </li>
           <li>
             <label>June 2023</label>

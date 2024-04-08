@@ -1,5 +1,5 @@
-import { Accordion } from '../../components/content/Accordion';
-import { Helmet } from 'react-helmet';
+import { Accordion } from "../../components/content/Accordion";
+import { Helmet } from "react-helmet";
 
 const FAQ = () => {
   return (
@@ -17,7 +17,9 @@ const FAQ = () => {
           </p>
         </Accordion>
         <Accordion summary="How do I sign up?">
-          <p>Click the "Sign Up" button and fill out the form. It's that easy!</p>
+          <p>
+            Click the "Sign Up" button and fill out the form. It's that easy!
+          </p>
         </Accordion>
         <Accordion summary="How do I post?">
           <p>Click the "Post" button and fill out the form. It's that easy!</p>

@@ -1,6 +1,6 @@
-import { Navbar } from '../components/utils/Navbar';
-import { Footer } from '../components/utils/Footer';
-import { useState } from 'react';
+import { Navbar } from "../components/utils/Navbar";
+import { Footer } from "../components/utils/Footer";
+import { useState } from "react";
 
 const About = () => {
   const [count, setCount] = useState(0);
@@ -15,9 +15,32 @@ const About = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <Navbar />
+        <main>
+          <h1>About</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            malesuada, eros nec cursus tincidunt, mi nunc ultricies erat, at
+            lacinia elit ex nec turpis. Aliquam erat volutpat. Nulla facilisi.
+            Nullam sit amet turpis nec nunc tincidunt lacinia. Proin euismod
+            risus eu enim iaculis, vel ultricies nunc varius. Nullam auctor
+            tincidunt sapien, nec ultricies erat. Nullam nec risus auctor,
+            efficitur nunc in, tincidunt lorem. Donec sit amet magna nec nunc
+            tincidunt ultricies. Nulla facilisi. Sed id nunc auctor, ultricies
+            purus nec, vehicula ex. Nullam nec nunc et nunc tincidunt interdum
+            sit amet nec eros. Sed nec magna nec eros tincidunt pharetra. Nullam
+            nec dolor ut nisi vehicula ultricies. Nulla facilisi. Nullam
+            tincidunt, ex nec luctus vehicula, nunc nunc tincidunt metus, eget
+            ultricies nunc eros nec libero. Nullam nec odio nec nunc tincidunt
+            ultricies. Nulla facilisi. Nullam nec nunc tincidunt, ultricies
+            turpis nec, vehicula nunc. Nulla facilisi. Nullam nec nunc tincidunt,
+            ultricies turpis nec, vehicula nunc. Nulla facilisi. Nullam nec nunc
+            tincidunt, ultricies turpis nec, vehicula nunc. Nulla facilisi.
+          </p>
+          <button onClick={() => setCount(count + 1)}>Click me</button>
+          <p>Count: {count}</p>
+        </main>
+        <Footer />
       </body>
     </html>
   );

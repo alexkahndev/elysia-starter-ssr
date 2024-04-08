@@ -1,11 +1,15 @@
 import * as Icon from "./Icons";
 
-export const Sidebar = ({ onPageChange }: {onPageChange: (newPage: string) => void}) => {
+export const Sidebar = ({
+  onPageChange,
+}: {
+  onPageChange: (newPage: string) => void;
+}) => {
   const handlePageClick = (newPage: string) => {
     onPageChange(newPage);
-    const buttons = document.querySelectorAll('.Sidebar button');
-    buttons?.forEach((button) => button.classList.remove('Active'));
-    document.getElementById(newPage)?.classList.add('Active');
+    const buttons = document.querySelectorAll(".Sidebar button");
+    buttons?.forEach((button) => button.classList.remove("Active"));
+    document.getElementById(newPage)?.classList.add("Active");
   };
 
   return (
@@ -42,7 +46,10 @@ export const Sidebar = ({ onPageChange }: {onPageChange: (newPage: string) => vo
             <label>FAQs</label>
           </span>
           <span>
-            <button onClick={() => handlePageClick("print-report")} id="print-report">
+            <button
+              onClick={() => handlePageClick("print-report")}
+              id="print-report"
+            >
               <Icon.Layers />
             </button>
             <label>Print Report</label>

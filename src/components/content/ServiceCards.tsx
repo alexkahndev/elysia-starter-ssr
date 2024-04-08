@@ -56,7 +56,7 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Icons.Box/>
+              <Icons.Box />
               <ul>
                 <li className="Category">Service B</li>
                 <ul className="CategoryInfo">
@@ -100,7 +100,7 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Icons.Box/>
+              <Icons.Box />
               <ul>
                 <li className="Category">Service D</li>
                 <ul className="CategoryInfo">
@@ -122,7 +122,7 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Icons.Box/>
+              <Icons.Box />
               <ul>
                 <li className="Category">Service E</li>
                 <ul className="CategoryInfo">
@@ -144,7 +144,7 @@ export const ServiceCards = () => {
         <section className="ServiceCard">
           <section className="cardHeader">
             <section className="ServiceCategory">
-              <Icons.Box/>
+              <Icons.Box />
               <ul>
                 <li className="Category">Service F</li>
                 <ul className="CategoryInfo">

@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const CookiePopup = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const hasAcceptedCookies = localStorage.getItem('cookiesAccepted');
+    const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
     const timeout = setTimeout(() => {
       setShowPopup(!hasAcceptedCookies);
     }, 1000);
@@ -13,7 +13,7 @@ export const CookiePopup = () => {
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem('cookiesAccepted', 'true');
+    localStorage.setItem("cookiesAccepted", "true");
     setShowPopup(false);
   };
 
@@ -28,8 +28,12 @@ export const CookiePopup = () => {
             as described in our Cookie Policy.
           </p>
           <section>
-            <button onClick={() => setShowPopup(false)} className="Close">Close</button>
-            <button onClick={acceptCookies} className="Accept">Accept</button>
+            <button onClick={() => setShowPopup(false)} className="Close">
+              Close
+            </button>
+            <button onClick={acceptCookies} className="Accept">
+              Accept
+            </button>
           </section>
         </article>
       )}

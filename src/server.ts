@@ -4,21 +4,9 @@ import { renderToReadableStream } from 'react-dom/server.browser';
 import { swagger } from '@elysiajs/swagger';
 import { createElement } from 'react';
 import { readdir } from "node:fs/promises";
-import * as path from "node:path";
-import { createUser, loginUser } from './handlers/UserHandler';
-import {
-  getServices,
-  getServiceById,
-  getCategories,
-  getServicesByCategory,
-  createService,
-  updateService,
-  deleteService,
-} from './handlers/ServicesHandler';
+import { extname,join } from "node:path";
 import Home from './pages/Home';
 import About from './pages/About';
-import Contact from './pages/Contact';
-import FAQMain from './pages/FAQMain';
 import ClientPortal from './pages/ClientPortal';
 
 const host = Bun.env.HOST || 'localhost';
@@ -31,10 +19,10 @@ const entryDir = "./src/indexes";
 const files = await readdir(entryDir);
 
 // Filter the array to only include .tsx files
-const entrypoints = files.filter((file) => path.extname(file) === ".tsx");
+const entrypoints = files.filter((file) => extname(file) === ".tsx");
 
 // Prepend the directory path to each entrypoint
-const entryPaths = entrypoints.map((file) => path.join(entryDir, file));
+const entryPaths = entrypoints.map((file) => join(entryDir, file));
 
 await Bun.build({
   entrypoints: entryPaths,
@@ -73,67 +61,9 @@ export const server = new Elysia()
   )
   .get('/', () => handleRequest(Home, '/HomeIndex.js'))
   .get('/about', () => handleRequest(About, '/AboutIndex.js'))
-  .get('/faq', () => handleRequest(FAQMain, '/FAQMainIndex.js'))
-  .post('/create-user', ({ body }) => createUser(body), {
-    body: t.Object({
-      firstName: t.String(),
-      lastName: t.String(),
-      email: t.String(),
-      phone: t.String(),
-      password: t.String(),
-      business_type: t.String(),
-      industry_type: t.String(),
-      business_name: t.String(),
-      revenue: t.String(),
-    }),
-  })
-  .get('/login', () => loginUser())
-  .get('/contact', () => handleRequest(Contact, '/ContactIndex.js'))
   .get('/portal', () => handleRequest(ClientPortal, '/ClientPortalIndex.js'))
 
-  //API Endpoints for services
-
-  //Retrieve list of all services
-  .get('/services/list', async () => getServices())
-
-  //Retrieve a service based on its ID
-  .get('/services/:id', async (req) => {
-    const id = parseInt(req.params.id);
-    return getServiceById(id);
-  })
-  //Retrieves list of categories from stored services
-  .get('/services/categories', async () => getCategories())
-
-  //Retrieves list of services from a specific category
-  .get('/services/category/:category', async (req) => {
-    const category = req.params.category;
-    return getServicesByCategory(category);
-  })
-
-  //Create a new service
-  .post('/services/create', async ({ body }) => createService(body), {
-    body: t.Object({
-      service_name: t.String(),
-      service_description: t.String(),
-      price: t.Number(),
-      category: t.String(),
-    }),
-  })
-
-  //Update an existing service based on ID
-  /*
-  .put("/services/:id", async (req: any, { body }: { body: {service_name: string, service_description: string, price: number, category: string }} ) => {
-    const id = parseInt(req.params.id);
-    return updateService(id, body);
-})*/
-
-  //Delete an entry based on ID
-  .delete('/services/:id', async (req) => {
-    const id = parseInt(req.params.id);
-    return deleteService(id);
-  })
-
-  .listen(3000, () => {
+  .listen(port, () => {
     console.log(`server started on http://${host}:${port}`);
   })
   .on('error', (error) => {

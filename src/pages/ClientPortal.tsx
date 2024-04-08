@@ -1,26 +1,26 @@
-import { Sidebar } from "../components/utils/Sidebar"
-import { SearchBar } from "../components/utils/SearchBar"
-import { useEffect, useState } from "react"
-import FAQ from "./subpages/FAQ"
-import History from "./subpages/History"
-import Services from "./subpages/Services"
+import { Sidebar } from "../components/utils/Sidebar";
+import { SearchBar } from "../components/utils/SearchBar";
+import { useEffect, useState } from "react";
+import FAQ from "./subpages/FAQ";
+import History from "./subpages/History";
+import Services from "./subpages/Services";
 
 const ClientPortal = () => {
-  const [page, setPage] = useState<string>(''); 
+  const [page, setPage] = useState<string>("");
 
   const handlePageChange = (newPage: string) => {
     setPage(newPage);
-    sessionStorage.setItem('currentPage', newPage); 
+    sessionStorage.setItem("currentPage", newPage);
   };
-  
+
   useEffect(() => {
-    const storedPage = sessionStorage.getItem('currentPage');
+    const storedPage = sessionStorage.getItem("currentPage");
     if (storedPage) {
       setPage(storedPage);
-      document.getElementById(storedPage || '')?.classList.add('Active');
+      document.getElementById(storedPage || "")?.classList.add("Active");
     } else {
-      setPage('services');
-      document.getElementById('services')?.classList.add('Active');
+      setPage("services");
+      document.getElementById("services")?.classList.add("Active");
     }
   }, [page]);
 
@@ -35,20 +35,20 @@ const ClientPortal = () => {
         <link rel="icon" href="/assets/favicon.ico" />
       </head>
       <body>
-        <Sidebar onPageChange={handlePageChange}/>
+        <Sidebar onPageChange={handlePageChange} />
         <header>
           <SearchBar />
         </header>
-          {page === 'services' && <Services />}
-          {page === 'history' && <History />}
-          {page === 'dashboard' && <h1>Dashboard</h1>}
-          {page === 'print-report' && <h1>Print Report</h1>}
-          {page === 'faqs' && <FAQ />}
-          {page === 'support' && <h1>Support</h1>}
-          {page === 'settings' && <h1>Settings</h1>}
+        {page === "services" && <Services />}
+        {page === "history" && <History />}
+        {page === "dashboard" && <h1>Dashboard</h1>}
+        {page === "print-report" && <h1>Print Report</h1>}
+        {page === "faqs" && <FAQ />}
+        {page === "support" && <h1>Support</h1>}
+        {page === "settings" && <h1>Settings</h1>}
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default ClientPortal
+export default ClientPortal;
