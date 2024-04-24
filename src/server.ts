@@ -6,8 +6,8 @@ import { createElement } from 'react';
 import { readdir } from "node:fs/promises";
 import { extname,join } from "node:path";
 import Home from './pages/Home';
-import About from './pages/About';
-import ClientPortal from './pages/ClientPortal';
+import { About } from './pages/About';
+import { ClientPortal } from './pages/ClientPortal';
 
 const host = Bun.env.HOST || 'localhost';
 const port = Bun.env.PORT || 3000;

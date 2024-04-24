@@ -2,7 +2,7 @@ import { Navbar } from "../components/utils/Navbar";
 import { Footer } from "../components/utils/Footer";
 import { useState } from "react";
 
-const About = () => {
+export const About = () => {
   const [count, setCount] = useState(0);
   return (
     <html>
@@ -45,5 +45,3 @@ const About = () => {
     </html>
   );
 };
-
-export default About;
