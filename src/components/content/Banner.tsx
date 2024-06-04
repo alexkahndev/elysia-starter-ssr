@@ -10,7 +10,7 @@ export const Banner = () => {
       <section>
         <aside className="Banner__Card">
           <header>
-            <img src="/assets/business-growth.svg" alt="Business Growth Icon" />
+            <img src="/assets/svg/business-growth.svg" alt="Business Growth Icon" />
             <h2>Business Growth</h2>
           </header>
           <main>
@@ -26,7 +26,7 @@ export const Banner = () => {
         <aside className="Banner__Card">
           <header>
             <img
-              src="/assets/client-portal.svg"
+              src="/assets/svg/client-portal.svg"
               alt="Real-time Engagement Icon"
             />
             <h2>Real-time Engagement</h2>
@@ -47,7 +47,7 @@ export const Banner = () => {
         <aside className="Banner__Card">
           <header>
             <img
-              src="/assets/strategy-form.svg"
+              src="/assets/svg/strategy-form.svg"
               alt="Awesome.Social Strategy Icon"
             />
             <h2>Awesome.Social Strategy</h2>

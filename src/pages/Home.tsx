@@ -5,16 +5,16 @@ import { Footer } from "../components/utils/Footer";
 import { Testimonials } from "../components/content/Testimonials";
 import { CookiePopup } from "../components/content/CookiePopup";
 
-const Home = () => {
+export const Home = () => {
   return (
     <html>
       <head>
         <meta charSet="utf-8" />
-        <title>Awesome.Social</title>
+        <title>Elysia Starter SSR</title>
         <meta name="description" content="Bun, Elysia & React" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/styles/Home.css" />
-        <link rel="icon" href="/assets/favicon.ico" />
+        <link rel="stylesheet" href="/assets/css/Home.css" />
+        <link rel="icon" href="/assets/ico/favicon.ico" />
       </head>
       <body>
         <Navbar />
@@ -29,5 +29,3 @@ const Home = () => {
     </html>
   );
 };
-
-export default Home;
