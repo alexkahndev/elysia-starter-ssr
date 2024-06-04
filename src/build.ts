@@ -26,7 +26,7 @@ export async function build() {
   const { logs, success } = await Bun.build({
     entrypoints: entryPaths,
     outdir: "./build",
-    naming: `[dir]/indexes/[name]-${buildTimeStamp}.[ext]`,
+    naming: `[dir]/indexes/[name].${buildTimeStamp}.[ext]`,
     minify: true,
   });
 

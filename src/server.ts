@@ -1,4 +1,4 @@
-import { Elysia, t } from "elysia";
+import { Elysia } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server.browser";
 import { swagger } from "@elysiajs/swagger";
@@ -15,10 +15,7 @@ const buildTimeStamp = await build();
 
 const doYouLikeSwaggerUIBetter = false;
 
-async function handleRequest(
-  pageComponent: React.ComponentType,
-  index: string,
-) {
+async function handleRequest(pageComponent: any, index: string) {
   const page = createElement(pageComponent);
   const stream = await renderToReadableStream(page, {
     bootstrapScripts: [index],
@@ -42,14 +39,14 @@ export const server = new Elysia()
       provider: doYouLikeSwaggerUIBetter ? "swagger-ui" : "scalar",
     }),
   )
-  .get("/", () => handleRequest(Home, `indexes/HomeIndex-${buildTimeStamp}.js`))
+  .get("/", () => handleRequest(Home, `indexes/HomeIndex.${buildTimeStamp}.js`))
   .get("/about", () =>
-    handleRequest(About, `indexes/AboutIndex-${buildTimeStamp}.js`),
+    handleRequest(About, `indexes/AboutIndex.${buildTimeStamp}.js`),
   )
   .get("/portal", () =>
     handleRequest(
       ClientPortal,
-      `indexes/ClientPortalIndex-${buildTimeStamp}.js`,
+      `indexes/ClientPortalIndex.${buildTimeStamp}.js`,
     ),
   )
 

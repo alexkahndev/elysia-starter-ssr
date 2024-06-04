@@ -10,7 +10,10 @@ export const Banner = () => {
       <section>
         <aside className="Banner__Card">
           <header>
-            <img src="/assets/svg/business-growth.svg" alt="Business Growth Icon" />
+            <img
+              src="/assets/svg/business-growth.svg"
+              alt="Business Growth Icon"
+            />
             <h2>Business Growth</h2>
           </header>
           <main>
