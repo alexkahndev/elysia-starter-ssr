@@ -11,14 +11,31 @@ export const ClientPortal = () => {
         <title>Awesome.Social</title>
         <meta name="description" content="Bun, Elysia & React" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/assets/css/About.css" />
         <link rel="icon" href="/assets/ico/favicon.ico" />
       </head>
-      <body>
+      <body
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          margin: "0"
+        }}
+      >
         <Navbar />
-        <main>
-          <h1>Client Portal</h1>
-          <p>
+        <main
+          style={{
+            flex: "1",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20px",
+            backgroundColor: "#fff",
+            textAlign: "center"
+          }}
+        >
+          <h1 style={{ marginBottom: "20px" }}>Client Portal</h1>
+          <p style={{ marginBottom: "20px", maxWidth: "600px" }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             malesuada, eros nec cursus tincidunt, mi nunc ultricies erat, at
             lacinia elit ex nec turpis. Aliquam erat volutpat. Nulla facilisi.
@@ -38,8 +55,22 @@ export const ClientPortal = () => {
             Nullam nec nunc tincidunt, ultricies turpis nec, vehicula nunc.
             Nulla facilisi.
           </p>
-          <button onClick={() => setCount(count + 1)}>Click me</button>
-          <p>Count: {count}</p>
+          <button
+            onClick={() => setCount(count + 1)}
+            style={{
+              padding: "10px 20px",
+              fontSize: "16px",
+              cursor: "pointer",
+              borderRadius: "5px",
+              border: "none",
+              backgroundColor: "#007BFF",
+              color: "#fff",
+              marginBottom: "20px"
+            }}
+          >
+            Click me
+          </button>
+          <p style={{ fontSize: "18px" }}>Count: {count}</p>
         </main>
         <Footer />
       </body>

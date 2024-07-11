@@ -4,7 +4,6 @@ import { renderToReadableStream } from "react-dom/server.browser";
 import { swagger } from "@elysiajs/swagger";
 import { createElement } from "react";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
 import { ClientPortal } from "./pages/ClientPortal";
 import { build } from "./build";
 
@@ -16,43 +15,42 @@ const buildTimeStamp = await build();
 const doYouLikeSwaggerUIBetter = false;
 
 async function handleRequest(pageComponent: any, index: string) {
-  const page = createElement(pageComponent);
-  const stream = await renderToReadableStream(page, {
-    bootstrapScripts: [index],
-  });
+	const page = createElement(pageComponent);
+	const stream = await renderToReadableStream(page, {
+		bootstrapScripts: [index]
+	});
 
-  return new Response(stream, {
-    headers: { "Content-Type": "text/html" },
-  });
+	return new Response(stream, {
+		headers: { "Content-Type": "text/html" }
+	});
 }
 
 export const server = new Elysia()
 
-  .use(
-    staticPlugin({
-      assets: "./build",
-      prefix: "",
-    }),
-  )
-  .use(
-    swagger({
-      provider: doYouLikeSwaggerUIBetter ? "swagger-ui" : "scalar",
-    }),
-  )
-  .get("/", () => handleRequest(Home, `indexes/HomeIndex.${buildTimeStamp}.js`))
-  .get("/about", () =>
-    handleRequest(About, `indexes/AboutIndex.${buildTimeStamp}.js`),
-  )
-  .get("/portal", () =>
-    handleRequest(
-      ClientPortal,
-      `indexes/ClientPortalIndex.${buildTimeStamp}.js`,
-    ),
-  )
+	.use(
+		staticPlugin({
+			assets: "./build",
+			prefix: ""
+		})
+	)
+	.use(
+		swagger({
+			provider: doYouLikeSwaggerUIBetter ? "swagger-ui" : "scalar"
+		})
+	)
+	.get("/", () =>
+		handleRequest(Home, `indexes/HomeIndex.${buildTimeStamp}.js`)
+	)
+	.get("/portal", () =>
+		handleRequest(
+			ClientPortal,
+			`indexes/ClientPortalIndex.${buildTimeStamp}.js`
+		)
+	)
 
-  .listen(port, () => {
-    console.log(`server started on http://${host}:${port}`);
-  })
-  .on("error", (error) => {
-    console.error(`Server error: ${error.code}`);
-  });
+	.listen(port, () => {
+		console.log(`server started on http://${host}:${port}`);
+	})
+	.on("error", (error) => {
+		console.error(`Server error: ${error.code}`);
+	});
