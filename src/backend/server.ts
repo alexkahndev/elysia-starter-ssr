@@ -1,6 +1,6 @@
 import { Elysia } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
-import { renderToReadableStream } from "react-dom/server.browser";
+import { renderToReadableStream } from "react-dom/server";
 import { swagger } from "@elysiajs/swagger";
 import { createElement } from "react";
 import { Home } from "../frontend/pages/Home";
@@ -11,8 +11,6 @@ const host = Bun.env.HOST || "localhost";
 const port = Bun.env.PORT || 3000;
 
 const buildTimeStamp = await build();
-
-const doYouLikeSwaggerUIBetter = false;
 
 async function handleRequest(pageComponent: any, index: string) {
 	const page = createElement(pageComponent);
@@ -26,7 +24,6 @@ async function handleRequest(pageComponent: any, index: string) {
 }
 
 export const server = new Elysia()
-
 	.use(
 		staticPlugin({
 			assets: "./build",
@@ -34,9 +31,7 @@ export const server = new Elysia()
 		})
 	)
 	.use(
-		swagger({
-			provider: doYouLikeSwaggerUIBetter ? "swagger-ui" : "scalar"
-		})
+		swagger()
 	)
 	.get("/", () =>
 		handleRequest(Home, `HomeIndex.${buildTimeStamp}.js`)

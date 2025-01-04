@@ -29,32 +29,7 @@ export const Navbar = () => {
 		  >
 			Portal
 		  </a>
-		  <a
-			href="/login"
-			style={{
-			  color: "#fff",
-			  textDecoration: "none",
-			  fontSize: "16px",
-			  marginRight: "20px"
-			}}
-		  >
-			Login
-		  </a>
-		  <a
-			href="/signup"
-			style={{
-			  color: "#fff",
-			  textDecoration: "none",
-			  fontSize: "16px",
-			  padding: "8px 16px",
-			  border: "1px solid #fff",
-			  borderRadius: "4px"
-			}}
-		  >
-			Sign Up
-		  </a>
 		</nav>
 	  </header>
 	);
   };
-  
