@@ -3,8 +3,8 @@ import { staticPlugin } from "@elysiajs/static";
 import { renderToReadableStream } from "react-dom/server.browser";
 import { swagger } from "@elysiajs/swagger";
 import { createElement } from "react";
-import { Home } from "./pages/Home";
-import { ClientPortal } from "./pages/ClientPortal";
+import { Home } from "../frontend/pages/Home";
+import { ClientPortal } from "../frontend/pages/ClientPortal";
 import { build } from "./build";
 
 const host = Bun.env.HOST || "localhost";
@@ -39,12 +39,12 @@ export const server = new Elysia()
 		})
 	)
 	.get("/", () =>
-		handleRequest(Home, `indexes/HomeIndex.${buildTimeStamp}.js`)
+		handleRequest(Home, `HomeIndex.${buildTimeStamp}.js`)
 	)
 	.get("/portal", () =>
 		handleRequest(
 			ClientPortal,
-			`indexes/ClientPortalIndex.${buildTimeStamp}.js`
+			`ClientPortalIndex.${buildTimeStamp}.js`
 		)
 	)
 

@@ -1,13 +1,14 @@
 {
   "name": "awesome-social",
   "version": "0.2.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css}\"",
-    "dev": "bun run --watch src/server.ts",
-    "db:generate": "drizzle-kit generate:pg --schema ./db/schema.ts --out=./db/migrations",
-    "db:migrate": "bun run ./db/migrate.ts"
-  },
+"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,json}\"",
+		"dev": "bun run --watch src/backend/server.ts",
+		"db:generate": "drizzle-kit generate --schema ./db/schema.ts --dialect postgresql",
+		"db:migrate": "bun run ./db/migrate.ts",
+		"db:studio": "drizzle-kit studio"
+	},
   "dependencies": {
     "@elysiajs/static": "^1.0.3",
     "@elysiajs/swagger": "^1.0.5",
