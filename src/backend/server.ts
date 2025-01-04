@@ -30,17 +30,10 @@ export const server = new Elysia()
 			prefix: ""
 		})
 	)
-	.use(
-		swagger()
-	)
-	.get("/", () =>
-		handleRequest(Home, `HomeIndex.${buildTimeStamp}.js`)
-	)
+	.use(swagger())
+	.get("/", () => handleRequest(Home, `HomeIndex.${buildTimeStamp}.js`))
 	.get("/portal", () =>
-		handleRequest(
-			ClientPortal,
-			`ClientPortalIndex.${buildTimeStamp}.js`
-		)
+		handleRequest(ClientPortal, `ClientPortalIndex.${buildTimeStamp}.js`)
 	)
 
 	.listen(port, () => {
